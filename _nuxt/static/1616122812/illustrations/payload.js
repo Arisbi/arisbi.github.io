@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/illustrations", {data:[{}],fetch:[],mutations:[]});
