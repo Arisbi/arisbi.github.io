@@ -1,0 +1,7 @@
+export { default as Gallery } from '../../components/Gallery.vue'
+export { default as Logo } from '../../components/Logo.vue'
+export { default as More } from '../../components/More.vue'
+
+export const LazyGallery = import('../../components/Gallery.vue' /* webpackChunkName: "components/gallery" */).then(c => c.default || c)
+export const LazyLogo = import('../../components/Logo.vue' /* webpackChunkName: "components/logo" */).then(c => c.default || c)
+export const LazyMore = import('../../components/More.vue' /* webpackChunkName: "components/more" */).then(c => c.default || c)

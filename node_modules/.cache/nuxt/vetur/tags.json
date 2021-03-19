@@ -1,0 +1,11 @@
+{
+  "Gallery": {
+    "description": "Auto imported from components/Gallery.vue"
+  },
+  "Logo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "More": {
+    "description": "Auto imported from components/More.vue"
+  }
+}
