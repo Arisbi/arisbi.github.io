@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002Fcharisbi\u002Fassets\u002Fstatic\u002F1616136678",layout:"default",error:a,serverRendered:true,routePath:"\u002F",config:{app:{basePath:"\u002Fcharisbi\u002F",assetsPath:"\u002Fcharisbi\u002Fassets\u002F",cdnURL:a}}}}(null));
