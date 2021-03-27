@@ -4,7 +4,7 @@
       <h6 class="small">
         Gallery
       </h6>
-      <img src="~/assets/img/img4.jpg" alt="">
+      
     </div>
   </div>
 </template>
