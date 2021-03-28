@@ -22,6 +22,8 @@
           <div class="word">Welcome 歓迎 Willkommen</div>
         </div>
       </b-row>
+      <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link>
+      <nuxt-link :to="switchLocalePath('es')">ES</nuxt-link>
     </b-container>
     <b-container class="About">
       <b-row>
@@ -30,6 +32,7 @@
           <Wave/>
           </div>
           <span>Acerca de</span>
+          <span>{{ $t('welcome') }}</span>
           <h1>Diseñadora Gráfica.
               Experiencia en UX / UI.
               Entusiasta del código.
@@ -37,10 +40,7 @@
           <img src="~/assets/img/Astronaut-Aris2.PNG" alt="" class="profile-img" style="width:15rem;">
         </b-col>
         <b-col>
-          <p>Diseñadora UX/UI, amante del código front end y de la animación motion graphics/3D 
-            con mucho interés en los proyectos responsivos (Mobile First!) junto con aplicaciones 
-            para Android y IOS.
-            Actualment trabajo tiempo completo pero me gusta ayudar productos vía Freelance.</p>
+          <p>{{ $t('description') }}</p>
             <p>Mi github</p><a href="https://github.com/Arisbi" target="_blank">ARISBI.</a>
             <b-row class="services">
               <img src="~/assets/img/UxUi.svg" alt="" class="profile-img">

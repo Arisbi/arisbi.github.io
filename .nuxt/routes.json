@@ -1,13 +1,27 @@
 [
   {
-    "name": "about",
+    "name": "about___es",
     "path": "/about",
     "component": "/Users/Charis/Documents/charisbi/pages/about.vue",
     "chunkName": "pages/about",
     "_name": "_ce32a490"
   },
   {
-    "name": "index",
+    "name": "index___en",
+    "path": "/en",
+    "component": "/Users/Charis/Documents/charisbi/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_8ec2ef06"
+  },
+  {
+    "name": "about___en",
+    "path": "/en/about",
+    "component": "/Users/Charis/Documents/charisbi/pages/about.vue",
+    "chunkName": "pages/about",
+    "_name": "_ce32a490"
+  },
+  {
+    "name": "index___es",
     "path": "/",
     "component": "/Users/Charis/Documents/charisbi/pages/index.vue",
     "chunkName": "pages/index",

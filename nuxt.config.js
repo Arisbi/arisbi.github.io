@@ -53,6 +53,21 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    [
+      'nuxt-i18n',
+      { 
+        lazy: true,
+        locales: [
+          {code: 'en', file: 'en.json'},
+          {code: 'es', file: 'es.json'},
+        ],
+        defaultLocale: 'es',
+        langDir: 'locales/',
+        vueI18n: {
+          fallbackLocale: 'es',
+        },
+      }
+    ]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
