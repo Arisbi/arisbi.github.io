@@ -21,11 +21,19 @@ export const routerOptions = {
   routes: [{
     path: "/about",
     component: _ce32a490,
-    name: "about"
+    name: "about___es"
+  }, {
+    path: "/en",
+    component: _8ec2ef06,
+    name: "index___en"
+  }, {
+    path: "/en/about",
+    component: _ce32a490,
+    name: "about___en"
   }, {
     path: "/",
     component: _8ec2ef06,
-    name: "index"
+    name: "index___es"
   }],
 
   fallback: false
