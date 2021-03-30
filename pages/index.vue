@@ -22,34 +22,113 @@
           <div class="word">Welcome 歓迎 Willkommen</div>
         </div>
       </b-row>
-      <nuxt-link :to="switchLocalePath('en')">EN</nuxt-link>
-      <nuxt-link :to="switchLocalePath('es')">ES</nuxt-link>
     </b-container>
+
+    <div class="leng">
+        <nuxt-link :to="switchLocalePath('en')">En</nuxt-link>
+        <nuxt-link :to="switchLocalePath('es')">Es</nuxt-link>
+    </div>
+
     <b-container class="About">
       <b-row>
-        <b-col>
-          <div class="container1">
-          <Wave/>
-          </div>
-          <span>Acerca de</span>
-          <span>{{ $t('welcome') }}</span>
-          <h1>Diseñadora Gráfica.
+        <b-col cols="12" md="7">
+          <b-row class="aboutWave">
+            <div class="wave">
+              <Wave/>
+            </div>
+            <span>Acerca de</span>
+          </b-row>
+          <h1 class="mt-4 resume">Diseñadora Gráfica.
               Experiencia en UX / UI.
               Entusiasta del código.
               Buscando mejorar productos.</h1>
-          <img src="~/assets/img/Astronaut-Aris2.PNG" alt="" class="profile-img" style="width:15rem;">
+          <img src="~/assets/img/Astronaut-Aris2.png" alt="" class="profile-img">
         </b-col>
-        <b-col>
+        <b-col cols="12" md="5" class="description">
           <p>{{ $t('description') }}</p>
-            <p>Mi github</p><a href="https://github.com/Arisbi" target="_blank">ARISBI.</a>
+          <p>{{ $t('description2') }}</p>
+          <div class="git">
+            <p>Mi github</p>
+            <a href="https://github.com/Arisbi" target="_blank">ARISBI.</a>
+          </div>
             <b-row class="services">
-              <img src="~/assets/img/UxUi.svg" alt="" class="profile-img">
-              <img src="~/assets/img/Front.svg" alt="" class="profile-img">
-              <img src="~/assets/img/Graphic.svg" alt="" class="profile-img">
+              <img src="~/assets/img/UxUi.svg" alt="" class="">
+              <img src="~/assets/img/Front.svg" alt="" class="">
+              <img src="~/assets/img/Graphic.svg" alt="" class="">
             </b-row>
         </b-col>
-        <BigCircle/>
-        <SmallCircle/>
+        <BigCircle class="bigCircle"/>
+        <SmallCircle class="smallCircle"/>
+      </b-row>
+    </b-container>
+
+    <b-container class="Projects">
+        <b-col>
+          <h2>Proyectos.</h2>
+        </b-col>
+        <b-col class="projectsOnly">
+            <ul class="text-right">
+              <li>
+                <a id="menu_item" href="/projects">
+                  <span>01</span>
+                  Proyectos
+                  <img class="menu_image" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                </a>
+              </li>
+              <li>
+                <a id="menu_item2" href="/illustrations">
+                <span>02</span>
+                Ilustraciones
+                <img class="menu_image2" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+              </a>
+              </li>
+              <li>
+                <a id="menu_item3" href="/photography">
+                <span>03</span>
+                Fotografia
+                <img class="menu_image3" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+              </a>
+              </li>
+              <li>
+              <a id="menu_item4" href="/motiongraphics">
+                <span>04</span>
+                Motion Graphics
+                <img class="menu_image4" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+              </a>
+              </li>
+              <li>
+                <a id="menu_item5" href="/webdesign">
+                <span>05</span>
+                UI Web Design
+                <img class="menu_image5" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+              </a>
+              </li>
+          </ul>
+        </b-col>
+    </b-container>
+    <b-container fluid class="Contact">
+      <b-row>
+        <b-col md="6" class="information">
+          <hr class="line-contact">
+          <p class="title-contact">Contacto</p>
+          <ul>
+            <li>
+              <a href="">Dribble</a>
+            </li>
+            <li>
+              <a href="">LinkedIn</a>
+            </li>
+            <li>
+              <a href="">Behance</a>
+            </li>
+            <li>
+              <a href="">hello@arisbi.com</a>
+            </li>
+          </ul>
+        </b-col>
+        <b-col>
+          
+        </b-col>
       </b-row>
     </b-container>
   </div>
@@ -73,6 +152,50 @@ export default {
   },
   methods: {
     startDesktop: function(){
+
+        $('#menu_item, #menu_item2, #menu_item3, #menu_item4, #menu_item5').mousemove(function(e) {
+          $('.menu_image, .menu_image2, .menu_image3, .menu_image4, .menu_image5').offset({
+              left: e.pageX + 20 ,
+              top: e.pageY - 50 ,
+          });
+        });
+        // Tengo multiples elementos (.menu_image, .menu_image2, .menu_image3) que ocupan diferentes y los mismos 
+        // eventos (mouseenter) pero con diferente funcion (.css display block, .css display none) https://stackoverflow.com/questions/19257752/jquery-same-function-for-multiple-elements-and-multiple-events/19257812
+
+         $("#menu_item").mouseenter(function(){
+           $(".menu_image").css({display: 'block'});
+         });
+         $("#menu_item").mouseleave(function(){
+           $(".menu_image").css({display: 'none'});
+         });
+
+          $("#menu_item2").mouseenter(function(){
+             $(".menu_image2").css({display: 'block',});
+           });
+           $("#menu_item2").mouseleave(function(){
+             $(".menu_image2").css({display: 'none'});
+           });
+
+           $("#menu_item3").mouseenter(function(){
+             $(".menu_image3").css({display: 'block',});
+           });
+           $("#menu_item3").mouseleave(function(){
+             $(".menu_image3").css({display: 'none'});
+           });
+
+           $("#menu_item4").mouseenter(function(){
+             $(".menu_image4").css({display: 'block',});
+           });
+           $("#menu_item4").mouseleave(function(){
+             $(".menu_image4").css({display: 'none'});
+           });
+
+           $("#menu_item5").mouseenter(function(){
+             $(".menu_image5").css({display: 'block',});
+           });
+           $("#menu_item5").mouseleave(function(){
+             $(".menu_image5").css({display: 'none'});
+           });   
     }
   },
 }
@@ -127,7 +250,7 @@ export default {
 
 
 
-.container1 {
+.wave {
   width: 100px;
   overflow: hidden;
   svg {
@@ -153,4 +276,173 @@ export default {
   }
 }
 
+.Projects{
+  .menu_image, .menu_image2, .menu_image3, .menu_image4, .menu_image5{
+      display: none;
+      position: absolute;
+      width: 300px;
+      height: 200px;
+      z-index: -1;
+    }
+}
+
+@media (min-width: 720px) { 
+  .leng{
+    margin: 0 25px;
+    width: 35px;
+    position: fixed;
+    top: 85vh;
+    a{
+      color: var(--color);
+      display: block;
+      font-weight: 400;
+      font-size: 24px;
+    }
+    a:hover{
+      font-weight: 700;
+    }
+  }
+  .About{
+    margin-top: 150px;
+    padding: 0px 50px;
+    .aboutWave{
+      margin-left: -30px;
+      font-size: 18px;
+      .wave{
+        width: 30px;
+        svg{
+          width: 100px;
+        }
+      }
+    }
+    .resume{
+      font-size: 2.8rem;
+    }
+    .profile-img{
+      width: 18rem;
+      position: absolute;
+      z-index: -1;
+      top: 150px;
+      left: 120px;
+    }
+    .description{
+      margin-top: 120px;
+      padding: 0 0px 0 25px;
+    }
+    .git{
+      p{
+        display: inline;
+      }
+      a{
+      display: inline;
+      margin-left: 8px;
+      color: var(--color);
+      text-decoration: underline;
+      font-weight: 500;
+      }
+    }
+    .services{
+      img{
+        width: 5.5rem;
+        margin: 20px 22px;
+      }
+    }
+    .bigCircle{
+      position: absolute;
+      z-index: -2;
+      top: 700px;
+    }
+    .smallCircle{
+      position: absolute;
+      right: 100px;
+      z-index: -1;
+    }
+  }
+  .Projects{
+    margin-top: 300px;
+    h2{
+      font-size: 5rem;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .projectsOnly{
+      margin-top: -70px;
+      ul{
+        padding: 20px;
+        list-style: none;
+        li{
+          margin-bottom: 30px;
+          a{
+            position: relative;
+            color: var(--color);
+            font-size: 42px;
+            text-transform: uppercase;
+            z-index: 1;
+            font-weight: 400;
+            letter-spacing: 14px;
+            span{
+              position: relative;
+              font-size: 35px;
+              bottom: 20px;
+              left: 16px;
+              letter-spacing: 8px;
+              font-weight: 200;
+            }
+          }
+          a:hover{
+            font-weight: 800;
+            text-decoration: none;
+            color: #000000;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+  .Contact{
+    background-color: #E6E6E6;
+    padding: 40px 100px;
+    overflow: hidden;
+    .information{
+      padding: 0px 0px 30px 50px;
+      .line-contact{
+        transform: rotate(-90deg);
+        border: 1px solid #4F4F4F;
+        width: 9rem;
+        left: -128px;
+        top: 60px;
+        position: absolute;
+      }
+      .title-contact{
+        transform: rotate(-90deg);
+        position: absolute;
+        color: #4F4F4F;
+        left: -7rem;
+        top: 300px;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      ul{
+        padding-top: 180px;
+        list-style: none;
+        li{
+            padding-left: 10px;
+            padding-top: 30px;
+        a{
+            color: #5a5a5a;
+            font-size: 50px;
+            font-weight: 600;
+        }
+        a:hover{
+            font-weight: 600;
+            color: #000000;
+            transition: 1s;
+            z-index: 1;
+            }
+        }
+      }
+    }
+  }
+}
 </style>

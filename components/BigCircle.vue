@@ -1,5 +1,5 @@
 <template>
-    <svg width="806" height="806" viewBox="0 0 806 806" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="700" height="700" viewBox="0 0 806 806" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle opacity="0.3" cx="403" cy="403" r="403" fill="url(#paint0_linear)"/>
         <defs>
         <linearGradient id="paint0_linear" x1="403" y1="0" x2="403" y2="806" gradientUnits="userSpaceOnUse">
