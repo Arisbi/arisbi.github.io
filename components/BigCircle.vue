@@ -1,14 +1,6 @@
 <template>
     <svg width="700" height="700" viewBox="0 0 806 806" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle opacity="0.3" cx="403" cy="403" r="403" fill="url(#paint0_linear)"/>
-        <defs>
-        <linearGradient id="paint0_linear" x1="403" y1="0" x2="403" y2="806" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#F0F2F8"/>
-        <stop offset="0.314852" stop-color="#DADFEE"/>
-        <stop offset="0.667511" stop-color="#CED4E7"/>
-        <stop offset="1" stop-color="#C9CFE4"/>
-        </linearGradient>
-        </defs>
+        <circle opacity="0.3" cx="403" cy="403" r="403" fill="var(--bg-secondary)"/>
     </svg>
 </template>
 

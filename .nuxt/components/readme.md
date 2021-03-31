@@ -7,7 +7,9 @@ You can directly use them in pages and other components without the need to impo
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
 - `<BigCircle>` | `<big-circle>` (components/BigCircle.vue)
+- `<ByCh>` | `<by-ch>` (components/ByCh.vue)
 - `<Gallery>` | `<gallery>` (components/Gallery.vue)
+- `<Lines>` | `<lines>` (components/Lines.vue)
 - `<LogoCh>` | `<logo-ch>` (components/LogoCh.vue)
 - `<LogoChBig>` | `<logo-ch-big>` (components/LogoChBig.vue)
 - `<More>` | `<more>` (components/More.vue)

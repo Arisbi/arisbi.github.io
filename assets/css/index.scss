@@ -63,16 +63,16 @@ src: url(/assets/fonts/HelveticaNeue-Heavy.ttf) format('truetype');
     --color-primary: #F0F2F8;
     --color-secondary: #0e2233;
     --bg: #ffffff;
-    --bg-secondary: #fff;
+    --bg-secondary: #F0F2F8;
     --border-color: #ddd;
   }
   
   .dark-mode {
-    --color: #ffffff;
-    --color-primary: #ffffff6c;
+    --color: #d3d3d3;
+    --color-primary: #4A4B4E;
     --color-secondary: #fdfdfd;
-    --bg: #121212;
-    --bg-secondary: #000000;
+    --bg: #1B1C22;
+    --bg-secondary: #27282D;
     --border-color: #000000;
   }
 

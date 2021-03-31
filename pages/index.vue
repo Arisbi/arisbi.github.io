@@ -29,7 +29,7 @@
         <nuxt-link :to="switchLocalePath('es')">Es</nuxt-link>
     </div>
 
-    <b-container class="About">
+    <b-container id="about" class="About">
       <b-row>
         <b-col cols="12" md="7">
           <b-row class="aboutWave">
@@ -62,7 +62,7 @@
       </b-row>
     </b-container>
 
-    <b-container class="Projects">
+    <b-container id="work" class="Projects">
         <b-col>
           <h2>Proyectos.</h2>
         </b-col>
@@ -106,28 +106,41 @@
           </ul>
         </b-col>
     </b-container>
-    <b-container fluid class="Contact">
+    <b-container fluid id="contact" class="Contact">
       <b-row>
         <b-col md="6" class="information">
           <hr class="line-contact">
           <p class="title-contact">Contacto</p>
           <ul>
             <li>
-              <a href="">Dribble</a>
+              <a id="socialmed1" href="">
+                Dribble
+                <img class="socialmed1" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+              </a>
             </li>
             <li>
-              <a href="">LinkedIn</a>
+              <a id="socialmed2" href="">
+                Linkedin
+                <img class="socialmed2" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+              </a>
             </li>
             <li>
-              <a href="">Behance</a>
+              <a id="socialmed3" href="">
+                Behance
+                <img class="socialmed3" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+              </a>
             </li>
             <li>
-              <a href="">hello@arisbi.com</a>
+              <a id="socialmed4" href="">
+                hello@arisbi
+                <img class="socialmed4" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+              </a>
             </li>
           </ul>
+          <ByCh class="bych"/>
         </b-col>
-        <b-col>
-          
+        <b-col md="6">
+          <Lines class="lines"/>
         </b-col>
       </b-row>
     </b-container>
@@ -140,12 +153,16 @@ import LogoBig from '~/components/LogoChBig'
 import Wave from '~/components/Wave'
 import BigCircle from '~/components/BigCircle'
 import SmallCircle from '~/components/SmallCircle'
+import Lines from '~/components/Lines'
+import ByCh from '~/components/ByCh'
 export default {
   components:{
     LogoBig,
     Wave,
     BigCircle,
-    SmallCircle
+    SmallCircle,
+    Lines,
+    ByCh,
   },
   mounted: function() {
     this.startDesktop()
@@ -195,7 +212,35 @@ export default {
            });
            $("#menu_item5").mouseleave(function(){
              $(".menu_image5").css({display: 'none'});
-           });   
+           });
+
+            $("#socialmed1").mouseenter(function(){
+             $(".socialmed1").css({display: 'block',});
+           });
+           $("#socialmed1").mouseleave(function(){
+             $(".socialmed1").css({display: 'none'});
+           }); 
+
+           $("#socialmed2").mouseenter(function(){
+             $(".socialmed2").css({display: 'block',});
+           });
+           $("#socialmed2").mouseleave(function(){
+             $(".socialmed2").css({display: 'none'});
+           });
+
+           $("#socialmed3").mouseenter(function(){
+             $(".socialmed3").css({display: 'block',});
+           });
+           $("#socialmed3").mouseleave(function(){
+             $(".socialmed3").css({display: 'none'});
+           });
+
+           $("#socialmed4").mouseenter(function(){
+             $(".socialmed4").css({display: 'block',});
+           });
+           $("#socialmed4").mouseleave(function(){
+             $(".socialmed4").css({display: 'none'});
+           });
     }
   },
 }
@@ -400,48 +445,67 @@ export default {
     }
   }
   .Contact{
-    background-color: #E6E6E6;
-    padding: 40px 100px;
+    background-color: var(--bg-secondary);
+    padding: 0 100px;
     overflow: hidden;
     .information{
       padding: 0px 0px 30px 50px;
       .line-contact{
         transform: rotate(-90deg);
-        border: 1px solid #4F4F4F;
-        width: 9rem;
-        left: -128px;
-        top: 60px;
+        border: 1px solid var(--color);
+        width: 10rem;
+        left: -82px;
+        top: 55px;
         position: absolute;
       }
       .title-contact{
         transform: rotate(-90deg);
         position: absolute;
-        color: #4F4F4F;
-        left: -7rem;
-        top: 300px;
+        color: var(--color);
+        left: -6rem;
+        top: 240px;
         font-size: 2.2rem;
         text-transform: uppercase;
         font-weight: 600;
       }
       ul{
-        padding-top: 180px;
+        padding: 70px 100px;
         list-style: none;
         li{
             padding-left: 10px;
             padding-top: 30px;
         a{
-            color: #5a5a5a;
-            font-size: 50px;
+            color: var(--color);
+            font-size: 36px;
             font-weight: 600;
         }
         a:hover{
             font-weight: 600;
-            color: #000000;
+            color: var(--color);
             transition: 1s;
             z-index: 1;
-            }
+          }
         }
       }
+      .bych{
+        margin-left: -60px;
+        margin-top: -20px;
+        margin-bottom: -30px;
+      }
+    }
+    .lines{
+      position: absolute;
+      width: 680px;
+      right: -120px;
+    }
+    .socialmed1, .socialmed2, .socialmed3, .socialmed4{
+      display: none;
+      width: 17rem;
+      height: 30rem;
+      position: absolute;
+      bottom: 0px;
+      left: 45rem;
+      z-index: 2;
     }
   }
 }

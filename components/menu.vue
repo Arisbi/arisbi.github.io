@@ -36,7 +36,9 @@
             
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto desktop">
-            <b-nav-item href="/curriculumvitae" exact>Curriculum Vitae</b-nav-item>
+            <b-nav-item>
+              <a href="/curriculumvitae">Curriculum Vitae</a>
+            </b-nav-item>
           </b-navbar-nav>
         
       </b-navbar>
@@ -58,7 +60,7 @@ export default {
               $(window).scroll(function(){
                 var scroll = $(window).scrollTop();
                 if (scroll > 300) {
-                  $(".navbackground").css("background" , "white");
+                  $(".navbackground").css("background" , "var(--bg-secondary)");
                 }
                 else{
                   $(".navbackground").css("background" , "transparent");  	
@@ -93,6 +95,10 @@ ul{
         text-decoration: none;
       }
     }
+}
+
+.nav-item{
+  color: var(--color);
 }
 
 .navbackground{
