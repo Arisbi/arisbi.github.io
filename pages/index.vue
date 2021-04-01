@@ -24,12 +24,9 @@
       </b-row>
     </b-container>
 
-    <IndexMobile class="mobile"/>
-      <div class="desktop">
-        <h1>Desktop</h1>
-        <div class="leng">
-            <nuxt-link :to="switchLocalePath('en')">En</nuxt-link>
-            <nuxt-link :to="switchLocalePath('es')">Es</nuxt-link>
+      <div class="leng">
+          <nuxt-link :to="switchLocalePath('en')">En</nuxt-link>
+          <nuxt-link :to="switchLocalePath('es')">Es</nuxt-link>
       </div>
 
       <b-container fluid id="about" class="About">
@@ -147,7 +144,6 @@
           </b-col>
         </b-row>
       </b-container>
-    </div>
   </div>
 </template>
 
@@ -159,7 +155,6 @@ import BigCircle from '~/components/BigCircle'
 import SmallCircle from '~/components/SmallCircle'
 import Lines from '~/components/Lines'
 import ByCh from '~/components/ByCh'
-import IndexMobile from '~/components/mobile/Mobindex'
 export default {
   components:{
     LogoBig,
@@ -168,7 +163,6 @@ export default {
     SmallCircle,
     Lines,
     ByCh,
-    IndexMobile
   },
   mounted: function() {
     this.startDesktop()
@@ -253,11 +247,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.mobile{
+    display: block;
+  }
+.desktop{
+display: none;
+}
+
 .glass{
   position: absolute;
   height: 700px;
   width: 1200px;
 }
+
 .Intro{
   height: 600px;
   .logo{
@@ -297,24 +300,46 @@ export default {
     to { transform: translateX(-100%); }
   }
 }
-.wave {
-  width: 30px;
-  overflow: hidden;
-  svg {
-    position: relative;
-    left: -50px;
-    width: 100px;
-    animation: wave 2s linear infinite;
-  }
-@keyframes wave {
-    0% { 
-      left: -80px; 
+.leng{
+    margin: 0px 10px;
+    width: 35px;
+    position: fixed;
+    top: 80vh;
+    a{
+      color: var(--color);
+      display: block;
+      font-weight: 400;
+      font-size: 24px;
+      margin-bottom: 10px;
     }
-    100% { 
-      left: 0; 
+    a:hover{
+      font-weight: 700;
+    }
+  }
+.About{
+  margin-top: 150px;
+  padding: 0px 50px;
+  .wave {
+    width: 30px;
+    overflow: hidden;
+    svg {
+      position: relative;
+      left: -50px;
+      width: 100px;
+      animation: wave 2s linear infinite;
+    }
+  @keyframes wave {
+      0% { 
+        left: -80px; 
+      }
+      100% { 
+        left: 0; 
+      }
     }
   }
 }
+  
+  
 
 @media (min-width: 720px) { 
   .mobile{
@@ -507,6 +532,208 @@ export default {
       bottom: 0px;
       left: 45rem;
       z-index: 2;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .Intro{
+    height: 700px;
+    .logo{
+      .position-logo{
+        width: 42rem;
+        margin-top: 250px;
+      }
+    }
+    .words{
+      line-height: 12rem;
+      .marquee{
+        .word{
+          font-size: 11rem;
+        }
+      }
+    }
+  }
+  .leng{
+    a{
+      font-size: 2.2rem;
+    }
+  }
+ .About{
+    margin-top: 120px;
+    padding: 0px 5rem;
+    .aboutWave{
+      font-size: 26px;
+    }
+    .resume{
+      font-size: 3.8rem;
+    }
+    .profile-img{
+      width: 25rem;
+      top: 240px;
+      left: 150px;
+    }
+    .description, .git{
+      font-size: 1.3rem;
+    }
+    .services{
+      img{
+        width: 7.3rem;
+        margin: 60px 20px;
+      }
+    }
+  }
+  .Projects{
+    padding: 50px 100px;
+    h2{
+      font-size: 6rem;
+    }
+    .projectsOnly{
+      ul{
+        li{
+          a{
+            font-size: 3.5rem;
+          }
+        }
+      }
+    }
+  }
+  .Contact{
+    .information{
+      padding: 0px 0px 30px 55px;
+      .line-contact{
+        left: -45px;
+      }
+      .title-contact{
+        top: 262px;
+        font-size: 3rem;
+      }
+      ul{
+        padding: 100px 100px;
+        li{
+          a{
+            font-size: 3.5rem;
+          }
+          }
+      }
+      .bych{
+        svg{
+          width: 400px;
+          height: 100px;
+        }
+        .buildby{
+          width: 400px;
+          font-size: 1.2rem;
+          margin-top: -18px;
+        }
+      }
+    }
+    .lines{
+      width: 800px;
+    }
+  }
+}
+
+@media (min-width: 1824px) {
+  
+}
+
+@media (min-width: 2100px) {
+  .Intro{
+    height: 800px;
+    .logo{
+      .position-logo{
+        width: 42rem;
+      }
+    }
+    .words{
+      line-height: 14rem;
+      .marquee{
+        .word{
+          font-size: 13rem;
+        }
+      }
+    }
+  }
+  .leng{
+    a{
+      font-size: 2.2rem;
+    }
+  }
+ .About{
+    margin-top: 120px;
+    padding: 0px 20rem;
+    .aboutWave{
+      font-size: 26px;
+    }
+    .resume{
+      font-size: 4.8rem;
+    }
+    .profile-img{
+      width: 33rem;
+      top: 250px;
+      left: 220px;
+    }
+    .description{
+      font-size: 2rem;
+    }
+    .git{
+      font-size: 2rem;
+    }
+    .services{
+      img{
+        width: 9rem;
+        margin: 60px 50px;
+      }
+    }
+  }
+  .Projects{
+    padding: 100px 250px;
+    h2{
+      font-size: 10rem;
+    }
+    .projectsOnly{
+      ul{
+        li{
+          a{
+            font-size: 6rem;
+          }
+        }
+      }
+    }
+  }
+  .Contact{
+    .information{
+      padding: 0px 0px 65px 65px;
+      .line-contact{
+        left: 5px;
+      }
+      .title-contact{
+        top: 298px;
+        font-size: 4.2rem;
+      }
+      ul{
+        padding: 200px 400px;
+        li{
+          a{
+            font-size: 4rem;
+          }
+          }
+      }
+      .bych{
+        svg{
+          width: 400px;
+          height: 100px;
+        }
+        .buildby{
+          width: 400px;
+          font-size: 1.2rem;
+          margin-top: -18px;
+        }
+      }
+    }
+    .lines{
+      width: 1100px;
     }
   }
 }

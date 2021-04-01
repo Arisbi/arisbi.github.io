@@ -16,4 +16,3 @@ You can directly use them in pages and other components without the need to impo
 - `<SmallCircle>` | `<small-circle>` (components/SmallCircle.vue)
 - `<Wave>` | `<wave>` (components/Wave.vue)
 - `<Menu>` | `<menu>` (components/menu.vue)
-- `<MobileMobindex>` | `<mobile-mobindex>` (components/mobile/Mobindex.vue)

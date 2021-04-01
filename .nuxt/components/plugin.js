@@ -10,8 +10,7 @@ const components = {
   More: () => import('../../components/More.vue' /* webpackChunkName: "components/more" */).then(c => c.default || c),
   SmallCircle: () => import('../../components/SmallCircle.vue' /* webpackChunkName: "components/small-circle" */).then(c => c.default || c),
   Wave: () => import('../../components/Wave.vue' /* webpackChunkName: "components/wave" */).then(c => c.default || c),
-  Menu: () => import('../../components/menu.vue' /* webpackChunkName: "components/menu" */).then(c => c.default || c),
-  MobileMobindex: () => import('../../components/mobile/Mobindex.vue' /* webpackChunkName: "components/mobile-mobindex" */).then(c => c.default || c)
+  Menu: () => import('../../components/menu.vue' /* webpackChunkName: "components/menu" */).then(c => c.default || c)
 }
 
 for (const name in components) {

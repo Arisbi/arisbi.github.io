@@ -28,8 +28,5 @@
   },
   "Menu": {
     "description": "Auto imported from components/menu.vue"
-  },
-  "MobileMobindex": {
-    "description": "Auto imported from components/mobile/Mobindex.vue"
   }
 }

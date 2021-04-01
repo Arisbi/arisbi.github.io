@@ -1,0 +1,39 @@
+Media queries test
+
+////Mobile Breakpoints
+
+    Small Mobile
+    @media (min-width: 320px) {}
+
+    Medium Mobile
+    @media (min-width: 375px) {}
+
+    Large Mobile
+    @media (min-width: 425px) {}
+
+////Tablet Breakpoints
+
+    Medium Tablet
+    @media (min-width: 768px) {}
+
+    Large Tablet
+    @media (min-width: 1024px) {}
+
+////Laptop Breakpoints
+
+    Medium Laptop - Small Desktop
+*   @media (min-width: 1224px) {}
+
+    Large Laptop
+    @media (min-width: 1440px) {}
+
+////Desktop Breakpoints
+
+    Small Desktop
+*   @media (min-width: 1224px) {}
+
+    Medium Desktop
+    @media (min-width: 1824px) {}
+
+    Large Desktop
+    @media (min-width: 2100px) {}
