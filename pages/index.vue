@@ -29,7 +29,7 @@
         <nuxt-link :to="switchLocalePath('es')">Es</nuxt-link>
     </div>
 
-    <b-container id="about" class="About">
+    <b-container fluid id="about" class="About">
       <b-row>
         <b-col cols="12" md="7">
           <b-row class="aboutWave">
@@ -42,7 +42,7 @@
               Experiencia en UX / UI.
               Entusiasta del código.
               Buscando mejorar productos.</h1>
-          <img src="~/assets/img/Astronaut-Aris2.png" alt="" class="profile-img">
+          <img src="~/static/Astronaut-Aris2.png" alt="" class="profile-img">
         </b-col>
         <b-col cols="12" md="5" class="description">
           <p>{{ $t('description') }}</p>
@@ -52,9 +52,9 @@
             <a href="https://github.com/Arisbi" target="_blank">ARISBI.</a>
           </div>
             <b-row class="services">
-              <img src="~/assets/img/UxUi.svg" alt="" class="">
-              <img src="~/assets/img/Front.svg" alt="" class="">
-              <img src="~/assets/img/Graphic.svg" alt="" class="">
+              <img src="~/assets/UxUi.svg" alt="" class="">
+              <img src="~/assets/Front.svg" alt="" class="">
+              <img src="~/assets/Graphic.svg" alt="" class="">
             </b-row>
         </b-col>
         <BigCircle class="bigCircle"/>
@@ -62,7 +62,7 @@
       </b-row>
     </b-container>
 
-    <b-container id="work" class="Projects">
+    <b-container fluid id="work" class="Projects">
         <b-col>
           <h2>Proyectos.</h2>
         </b-col>
@@ -72,35 +72,35 @@
                 <a id="menu_item" href="/projects">
                   <span>01</span>
                   Proyectos
-                  <img class="menu_image" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                  <img class="menu_image" src="@/static/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
                 </a>
               </li>
               <li>
                 <a id="menu_item2" href="/illustrations">
                 <span>02</span>
                 Ilustraciones
-                <img class="menu_image2" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                <img class="menu_image2" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
               </a>
               </li>
               <li>
                 <a id="menu_item3" href="/photography">
                 <span>03</span>
                 Fotografia
-                <img class="menu_image3" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                <img class="menu_image3" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
               </a>
               </li>
               <li>
               <a id="menu_item4" href="/motiongraphics">
                 <span>04</span>
                 Motion Graphics
-                <img class="menu_image4" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                <img class="menu_image4" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
               </a>
               </li>
               <li>
                 <a id="menu_item5" href="/webdesign">
                 <span>05</span>
                 UI Web Design
-                <img class="menu_image5" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                <img class="menu_image5" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
               </a>
               </li>
           </ul>
@@ -115,25 +115,25 @@
             <li>
               <a id="socialmed1" href="">
                 Dribble
-                <img class="socialmed1" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                <img class="socialmed1" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
               </a>
             </li>
             <li>
               <a id="socialmed2" href="">
                 Linkedin
-                <img class="socialmed2" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                <img class="socialmed2" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
               </a>
             </li>
             <li>
               <a id="socialmed3" href="">
                 Behance
-                <img class="socialmed3" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                <img class="socialmed3" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
               </a>
             </li>
             <li>
               <a id="socialmed4" href="">
                 hello@arisbi
-                <img class="socialmed4" src="@/assets/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                <img class="socialmed4" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
               </a>
             </li>
           </ul>

@@ -2,8 +2,14 @@
   "BigCircle": {
     "description": "Auto imported from components/BigCircle.vue"
   },
+  "ByCh": {
+    "description": "Auto imported from components/ByCh.vue"
+  },
   "Gallery": {
     "description": "Auto imported from components/Gallery.vue"
+  },
+  "Lines": {
+    "description": "Auto imported from components/Lines.vue"
   },
   "LogoCh": {
     "description": "Auto imported from components/LogoCh.vue"
