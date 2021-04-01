@@ -8,6 +8,7 @@ export { default as More } from '../../components/More.vue'
 export { default as SmallCircle } from '../../components/SmallCircle.vue'
 export { default as Wave } from '../../components/Wave.vue'
 export { default as Menu } from '../../components/menu.vue'
+export { default as MobileMobindex } from '../../components/mobile/Mobindex.vue'
 
 export const LazyBigCircle = import('../../components/BigCircle.vue' /* webpackChunkName: "components/big-circle" */).then(c => c.default || c)
 export const LazyByCh = import('../../components/ByCh.vue' /* webpackChunkName: "components/by-ch" */).then(c => c.default || c)
@@ -19,3 +20,4 @@ export const LazyMore = import('../../components/More.vue' /* webpackChunkName: 
 export const LazySmallCircle = import('../../components/SmallCircle.vue' /* webpackChunkName: "components/small-circle" */).then(c => c.default || c)
 export const LazyWave = import('../../components/Wave.vue' /* webpackChunkName: "components/wave" */).then(c => c.default || c)
 export const LazyMenu = import('../../components/menu.vue' /* webpackChunkName: "components/menu" */).then(c => c.default || c)
+export const LazyMobileMobindex = import('../../components/mobile/Mobindex.vue' /* webpackChunkName: "components/mobile-mobindex" */).then(c => c.default || c)

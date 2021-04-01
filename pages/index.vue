@@ -24,126 +24,130 @@
       </b-row>
     </b-container>
 
-    <div class="leng">
-        <nuxt-link :to="switchLocalePath('en')">En</nuxt-link>
-        <nuxt-link :to="switchLocalePath('es')">Es</nuxt-link>
-    </div>
+    <IndexMobile class="mobile"/>
+      <div class="desktop">
+        <h1>Desktop</h1>
+        <div class="leng">
+            <nuxt-link :to="switchLocalePath('en')">En</nuxt-link>
+            <nuxt-link :to="switchLocalePath('es')">Es</nuxt-link>
+      </div>
 
-    <b-container fluid id="about" class="About">
-      <b-row>
-        <b-col cols="12" md="7">
-          <b-row class="aboutWave">
-            <div class="wave">
-              <Wave/>
-            </div>
-            <span>Acerca de</span>
-          </b-row>
-          <h1 class="mt-4 resume">Diseñadora Gráfica.
-              Experiencia en UX / UI.
-              Entusiasta del código.
-              Buscando mejorar productos.</h1>
-          <img src="~/static/Astronaut-Aris2.png" alt="" class="profile-img">
-        </b-col>
-        <b-col cols="12" md="5" class="description">
-          <p>{{ $t('description') }}</p>
-          <p>{{ $t('description2') }}</p>
-          <div class="git">
-            <p>Mi github</p>
-            <a href="https://github.com/Arisbi" target="_blank">ARISBI.</a>
-          </div>
-            <b-row class="services">
-              <img src="~/assets/UxUi.svg" alt="" class="">
-              <img src="~/assets/Front.svg" alt="" class="">
-              <img src="~/assets/Graphic.svg" alt="" class="">
+      <b-container fluid id="about" class="About">
+        <b-row>
+          <b-col cols="7">
+            <b-row class="aboutWave">
+              <div class="wave">
+                <Wave/>
+              </div>
+              <span>Acerca de</span>
             </b-row>
-        </b-col>
-        <BigCircle class="bigCircle"/>
-        <SmallCircle class="smallCircle"/>
-      </b-row>
-    </b-container>
+            <h1 class="mt-4 resume">Diseñadora Gráfica.
+                Experiencia en UX / UI.
+                Entusiasta del código.
+                Buscando mejorar productos.</h1>
+            <img src="~/static/Astronaut-Aris2.png" alt="" class="profile-img">
+          </b-col>
+          <b-col cols="5"  class="description">
+            <p>{{ $t('description') }}</p>
+            <p>{{ $t('description2') }}</p>
+            <div class="git">
+              <p>Mi github</p>
+              <a href="https://github.com/Arisbi" target="_blank">ARISBI.</a>
+            </div>
+              <b-row class="services">
+                <img src="~/assets/UxUi.svg" alt="" class="">
+                <img src="~/assets/Front.svg" alt="" class="">
+                <img src="~/assets/Graphic.svg" alt="" class="">
+              </b-row>
+          </b-col>
+          <BigCircle class="bigCircle"/>
+          <SmallCircle class="smallCircle"/>
+        </b-row>
+      </b-container>
 
-    <b-container fluid id="work" class="Projects">
-        <b-col>
-          <h2>Proyectos.</h2>
-        </b-col>
-        <b-col class="projectsOnly">
-            <ul class="text-right">
+      <b-container fluid id="work" class="Projects">
+          <b-col>
+            <h2>Proyectos.</h2>
+          </b-col>
+          <b-col class="projectsOnly">
+              <ul class="text-right">
+                <li>
+                  <a id="menu_item" href="/projects">
+                    <span>01</span>
+                    Proyectos
+                    <img class="menu_image" src="@/static/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                  </a>
+                </li>
+                <li>
+                  <a id="menu_item2" href="/illustrations">
+                  <span>02</span>
+                  Ilustraciones
+                  <img class="menu_image2" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                </a>
+                </li>
+                <li>
+                  <a id="menu_item3" href="/photography">
+                  <span>03</span>
+                  Fotografia
+                  <img class="menu_image3" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                </a>
+                </li>
+                <li>
+                <a id="menu_item4" href="/motiongraphics">
+                  <span>04</span>
+                  Motion Graphics
+                  <img class="menu_image4" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                </a>
+                </li>
+                <li>
+                  <a id="menu_item5" href="/webdesign">
+                  <span>05</span>
+                  UI Web Design
+                  <img class="menu_image5" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                </a>
+                </li>
+            </ul>
+          </b-col>
+      </b-container>
+      <b-container fluid id="contact" class="Contact">
+        <b-row>
+          <b-col md="6" class="information">
+            <hr class="line-contact">
+            <p class="title-contact">Contacto</p>
+            <ul>
               <li>
-                <a id="menu_item" href="/projects">
-                  <span>01</span>
-                  Proyectos
-                  <img class="menu_image" src="@/static/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                <a id="socialmed1" href="">
+                  Dribble
+                  <img class="socialmed1" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
                 </a>
               </li>
               <li>
-                <a id="menu_item2" href="/illustrations">
-                <span>02</span>
-                Ilustraciones
-                <img class="menu_image2" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
-              </a>
+                <a id="socialmed2" href="">
+                  Linkedin
+                  <img class="socialmed2" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                </a>
               </li>
               <li>
-                <a id="menu_item3" href="/photography">
-                <span>03</span>
-                Fotografia
-                <img class="menu_image3" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
-              </a>
+                <a id="socialmed3" href="">
+                  Behance
+                  <img class="socialmed3" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                </a>
               </li>
               <li>
-              <a id="menu_item4" href="/motiongraphics">
-                <span>04</span>
-                Motion Graphics
-                <img class="menu_image4" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
-              </a>
+                <a id="socialmed4" href="">
+                  hello@arisbi
+                  <img class="socialmed4" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                </a>
               </li>
-              <li>
-                <a id="menu_item5" href="/webdesign">
-                <span>05</span>
-                UI Web Design
-                <img class="menu_image5" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
-              </a>
-              </li>
-          </ul>
-        </b-col>
-    </b-container>
-    <b-container fluid id="contact" class="Contact">
-      <b-row>
-        <b-col md="6" class="information">
-          <hr class="line-contact">
-          <p class="title-contact">Contacto</p>
-          <ul>
-            <li>
-              <a id="socialmed1" href="">
-                Dribble
-                <img class="socialmed1" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
-              </a>
-            </li>
-            <li>
-              <a id="socialmed2" href="">
-                Linkedin
-                <img class="socialmed2" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
-              </a>
-            </li>
-            <li>
-              <a id="socialmed3" href="">
-                Behance
-                <img class="socialmed3" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
-              </a>
-            </li>
-            <li>
-              <a id="socialmed4" href="">
-                hello@arisbi
-                <img class="socialmed4" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
-              </a>
-            </li>
-          </ul>
-          <ByCh class="bych"/>
-        </b-col>
-        <b-col md="6">
-          <Lines class="lines"/>
-        </b-col>
-      </b-row>
-    </b-container>
+            </ul>
+            <ByCh class="bych"/>
+          </b-col>
+          <b-col md="6">
+            <Lines class="lines"/>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
   </div>
 </template>
 
@@ -155,6 +159,7 @@ import BigCircle from '~/components/BigCircle'
 import SmallCircle from '~/components/SmallCircle'
 import Lines from '~/components/Lines'
 import ByCh from '~/components/ByCh'
+import IndexMobile from '~/components/mobile/Mobindex'
 export default {
   components:{
     LogoBig,
@@ -163,6 +168,7 @@ export default {
     SmallCircle,
     Lines,
     ByCh,
+    IndexMobile
   },
   mounted: function() {
     this.startDesktop()
@@ -252,7 +258,6 @@ export default {
   height: 700px;
   width: 1200px;
 }
-
 .Intro{
   height: 600px;
   .logo{
@@ -292,19 +297,16 @@ export default {
     to { transform: translateX(-100%); }
   }
 }
-
-
-
 .wave {
-  width: 100px;
+  width: 30px;
   overflow: hidden;
   svg {
     position: relative;
     left: -50px;
-    width: 200px;
+    width: 100px;
     animation: wave 2s linear infinite;
   }
-  @keyframes wave {
+@keyframes wave {
     0% { 
       left: -80px; 
     }
@@ -314,24 +316,13 @@ export default {
   }
 }
 
-//
-.services{
-  img{
-    width: 7rem;;
-  }
-}
-
-.Projects{
-  .menu_image, .menu_image2, .menu_image3, .menu_image4, .menu_image5{
-      display: none;
-      position: absolute;
-      width: 300px;
-      height: 200px;
-      z-index: -1;
-    }
-}
-
 @media (min-width: 720px) { 
+  .mobile{
+    display: none;
+  }
+  .desktop{
+    display: block;
+  }
   .leng{
     margin: 0 25px;
     width: 35px;
@@ -375,6 +366,9 @@ export default {
       padding: 0 0px 0 25px;
     }
     .git{
+      text-align: left;
+      font-size: 16px;
+      margin-top: 0px;
       p{
         display: inline;
       }
@@ -409,6 +403,13 @@ export default {
       font-size: 5rem;
       text-transform: uppercase;
       font-weight: 400;
+    }
+    .menu_image, .menu_image2, .menu_image3, .menu_image4, .menu_image5{
+      display: none;
+      position: absolute;
+      width: 300px;
+      height: 200px;
+      z-index: -1;
     }
     .projectsOnly{
       margin-top: -70px;
