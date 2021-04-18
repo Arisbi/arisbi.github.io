@@ -17,6 +17,9 @@
   "LogoChBig": {
     "description": "Auto imported from components/LogoChBig.vue"
   },
+  "Mobindex": {
+    "description": "Auto imported from components/Mobindex.vue"
+  },
   "More": {
     "description": "Auto imported from components/More.vue"
   },

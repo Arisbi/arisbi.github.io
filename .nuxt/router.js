@@ -4,13 +4,13 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _15aba5f2 = () => interopDefault(import('../pages/curriculumvitae.vue' /* webpackChunkName: "pages/curriculumvitae" */))
-const _66fba36f = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
-const _47ef5a40 = () => interopDefault(import('../pages/illustrations.vue' /* webpackChunkName: "pages/illustrations" */))
-const _14a45a18 = () => interopDefault(import('../pages/motiongraphics.vue' /* webpackChunkName: "pages/motiongraphics" */))
-const _1ae33efa = () => interopDefault(import('../pages/photography.vue' /* webpackChunkName: "pages/photography" */))
-const _65b322ed = () => interopDefault(import('../pages/projects.vue' /* webpackChunkName: "pages/projects" */))
-const _50048e2f = () => interopDefault(import('../pages/webdesign.vue' /* webpackChunkName: "pages/webdesign" */))
+const _4696ced6 = () => interopDefault(import('../pages/curriculumvitae.vue' /* webpackChunkName: "pages/curriculumvitae" */))
+const _8ec2ef06 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _2a9b514e = () => interopDefault(import('../pages/illustrations.vue' /* webpackChunkName: "pages/illustrations" */))
+const _6880bda6 = () => interopDefault(import('../pages/motiongraphics.vue' /* webpackChunkName: "pages/motiongraphics" */))
+const _029da188 = () => interopDefault(import('../pages/photography.vue' /* webpackChunkName: "pages/photography" */))
+const _fe1f09c2 = () => interopDefault(import('../pages/projects.vue' /* webpackChunkName: "pages/projects" */))
+const _c71b8786 = () => interopDefault(import('../pages/webdesign.vue' /* webpackChunkName: "pages/webdesign" */))
 
 const emptyFn = () => {}
 
@@ -25,59 +25,59 @@ export const routerOptions = {
 
   routes: [{
     path: "/curriculumvitae",
-    component: _15aba5f2,
+    component: _4696ced6,
     name: "curriculumvitae___es"
   }, {
     path: "/en",
-    component: _66fba36f,
+    component: _8ec2ef06,
     name: "index___en"
   }, {
     path: "/illustrations",
-    component: _47ef5a40,
+    component: _2a9b514e,
     name: "illustrations___es"
   }, {
     path: "/motiongraphics",
-    component: _14a45a18,
+    component: _6880bda6,
     name: "motiongraphics___es"
   }, {
     path: "/photography",
-    component: _1ae33efa,
+    component: _029da188,
     name: "photography___es"
   }, {
     path: "/projects",
-    component: _65b322ed,
+    component: _fe1f09c2,
     name: "projects___es"
   }, {
     path: "/webdesign",
-    component: _50048e2f,
+    component: _c71b8786,
     name: "webdesign___es"
   }, {
     path: "/en/curriculumvitae",
-    component: _15aba5f2,
+    component: _4696ced6,
     name: "curriculumvitae___en"
   }, {
     path: "/en/illustrations",
-    component: _47ef5a40,
+    component: _2a9b514e,
     name: "illustrations___en"
   }, {
     path: "/en/motiongraphics",
-    component: _14a45a18,
+    component: _6880bda6,
     name: "motiongraphics___en"
   }, {
     path: "/en/photography",
-    component: _1ae33efa,
+    component: _029da188,
     name: "photography___en"
   }, {
     path: "/en/projects",
-    component: _65b322ed,
+    component: _fe1f09c2,
     name: "projects___en"
   }, {
     path: "/en/webdesign",
-    component: _50048e2f,
+    component: _c71b8786,
     name: "webdesign___en"
   }, {
     path: "/",
-    component: _66fba36f,
+    component: _8ec2ef06,
     name: "index___es"
   }],
 

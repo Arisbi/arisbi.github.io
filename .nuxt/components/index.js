@@ -4,6 +4,7 @@ export { default as Gallery } from '../../components/Gallery.vue'
 export { default as Lines } from '../../components/Lines.vue'
 export { default as LogoCh } from '../../components/LogoCh.vue'
 export { default as LogoChBig } from '../../components/LogoChBig.vue'
+export { default as Mobindex } from '../../components/Mobindex.vue'
 export { default as More } from '../../components/More.vue'
 export { default as SmallCircle } from '../../components/SmallCircle.vue'
 export { default as Wave } from '../../components/Wave.vue'
@@ -15,6 +16,7 @@ export const LazyGallery = import('../../components/Gallery.vue' /* webpackChunk
 export const LazyLines = import('../../components/Lines.vue' /* webpackChunkName: "components/lines" */).then(c => c.default || c)
 export const LazyLogoCh = import('../../components/LogoCh.vue' /* webpackChunkName: "components/logo-ch" */).then(c => c.default || c)
 export const LazyLogoChBig = import('../../components/LogoChBig.vue' /* webpackChunkName: "components/logo-ch-big" */).then(c => c.default || c)
+export const LazyMobindex = import('../../components/Mobindex.vue' /* webpackChunkName: "components/mobindex" */).then(c => c.default || c)
 export const LazyMore = import('../../components/More.vue' /* webpackChunkName: "components/more" */).then(c => c.default || c)
 export const LazySmallCircle = import('../../components/SmallCircle.vue' /* webpackChunkName: "components/small-circle" */).then(c => c.default || c)
 export const LazyWave = import('../../components/Wave.vue' /* webpackChunkName: "components/wave" */).then(c => c.default || c)

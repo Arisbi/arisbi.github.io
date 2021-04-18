@@ -31,7 +31,7 @@
 
       <b-container fluid id="about" class="About">
         <b-row>
-          <b-col cols="7">
+          <b-col cols="12" md="7">
             <b-row class="aboutWave">
               <div class="wave">
                 <Wave/>
@@ -44,7 +44,7 @@
                 Buscando mejorar productos.</h1>
             <img src="~/static/Astronaut-Aris2.png" alt="" class="profile-img">
           </b-col>
-          <b-col cols="5"  class="description">
+          <b-col cols="12" md="5"  class="description">
             <p>{{ $t('description') }}</p>
             <p>{{ $t('description2') }}</p>
             <div class="git">
@@ -79,7 +79,7 @@
                   <a id="menu_item2" href="/illustrations">
                   <span>02</span>
                   Ilustraciones
-                  <img class="menu_image2" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                  <img class="menu_image2" src="@/static/astronaut12.png" style="object-fit: cover" alt="">
                 </a>
                 </li>
                 <li>
@@ -121,7 +121,7 @@
               <li>
                 <a id="socialmed2" href="">
                   Linkedin
-                  <img class="socialmed2" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                  <img class="socialmed2" src="@/assets/astronaut12.png" style="object-fit: cover" alt="">
                 </a>
               </li>
               <li>
@@ -170,7 +170,11 @@ export default {
   methods: {
     startDesktop: function(){
 
-        $('#menu_item, #menu_item2, #menu_item3, #menu_item4, #menu_item5').mousemove(function(e) {
+      var mql = window.matchMedia('(min-width: 720px)');
+
+      function screenTest(e) {
+        if (e.matches) {
+           $('#menu_item, #menu_item2, #menu_item3, #menu_item4, #menu_item5').mousemove(function(e) {
           $('.menu_image, .menu_image2, .menu_image3, .menu_image4, .menu_image5').offset({
               left: e.pageX + 20 ,
               top: e.pageY - 50 ,
@@ -185,34 +189,6 @@ export default {
          $("#menu_item").mouseleave(function(){
            $(".menu_image").css({display: 'none'});
          });
-
-          $("#menu_item2").mouseenter(function(){
-             $(".menu_image2").css({display: 'block',});
-           });
-           $("#menu_item2").mouseleave(function(){
-             $(".menu_image2").css({display: 'none'});
-           });
-
-           $("#menu_item3").mouseenter(function(){
-             $(".menu_image3").css({display: 'block',});
-           });
-           $("#menu_item3").mouseleave(function(){
-             $(".menu_image3").css({display: 'none'});
-           });
-
-           $("#menu_item4").mouseenter(function(){
-             $(".menu_image4").css({display: 'block',});
-           });
-           $("#menu_item4").mouseleave(function(){
-             $(".menu_image4").css({display: 'none'});
-           });
-
-           $("#menu_item5").mouseenter(function(){
-             $(".menu_image5").css({display: 'block',});
-           });
-           $("#menu_item5").mouseleave(function(){
-             $(".menu_image5").css({display: 'none'});
-           });
 
             $("#socialmed1").mouseenter(function(){
              $(".socialmed1").css({display: 'block',});
@@ -241,6 +217,17 @@ export default {
            $("#socialmed4").mouseleave(function(){
              $(".socialmed4").css({display: 'none'});
            });
+        } else {
+          /* the viewport is less than than 720 pixels wide */
+          $("#menu_item").mouseenter(function(){
+           $(".menu_image").css({display: 'block'});
+         });
+        }
+      }
+
+      mql.addListener(screenTest);
+
+       
     }
   },
 }
@@ -337,7 +324,152 @@ display: none;
       }
     }
   }
+  h1{
+    font-size: 2.3rem;
+  }
+  .profile-img{
+    width: 25rem;
+    position: relative;
+    z-index: -1;
+    margin-top: -105px;
+    left: 0px;
+  }
+  .description{
+    margin-top: 50px;
+    padding: 0 17px;
+    font-size: 18px;
+  }
+  .git{
+    text-align: right;
+    font-size: 22px;
+    margin-top: 65px;
+    p{
+      display: inline;
+    }
+    a{
+    display: inline;
+    margin-left: 8px;
+    color: var(--color);
+    text-decoration: underline;
+    font-weight: 500;
+    }
+  }
+  .services{
+    img{
+      width: 5.5rem;
+      margin: 20px 22px;
+    }
+  }
+  .bigCircle{
+    position: absolute;
+    left: -110px;
+    z-index: -2;
+  }
 }
+.Projects{
+    margin-top: 300px;
+    h2{
+      font-size: 5rem;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .menu_image, .menu_image3, .menu_image5{
+        width: 25rem;
+    }
+    .menu_image2, .menu_image4{
+        width: 25rem;
+        
+    }
+    .projectsOnly{
+      margin-top: -70px;
+      ul{
+        padding: 20px;
+        list-style: none;
+        li{
+          margin-bottom: 30px;
+          a{
+            position: relative;
+            color: var(--color);
+            font-size: 42px;
+            text-transform: uppercase;
+            z-index: 1;
+            font-weight: 400;
+            letter-spacing: 14px;
+            span{
+              position: relative;
+              font-size: 35px;
+              bottom: 20px;
+              left: 16px;
+              letter-spacing: 8px;
+              font-weight: 200;
+            }
+          }
+          a:hover{
+            font-weight: 800;
+            text-decoration: none;
+            color: #000000;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+  .Contact{
+    background-color: var(--bg-secondary);
+    padding: 0 100px;
+    overflow: hidden;
+    .information{
+      padding: 0px 0px 30px 50px;
+      .line-contact{
+        transform: rotate(-90deg);
+        border: 1px solid var(--color);
+        width: 10rem;
+        left: -82px;
+        top: 55px;
+        position: absolute;
+      }
+      .title-contact{
+        transform: rotate(-90deg);
+        position: absolute;
+        color: var(--color);
+        left: -6rem;
+        top: 240px;
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      ul{
+        padding: 70px 100px;
+        list-style: none;
+        li{
+            padding-left: 10px;
+            padding-top: 30px;
+        a{
+            color: var(--color);
+            font-size: 36px;
+            font-weight: 600;
+        }
+        a:hover{
+            font-weight: 600;
+            color: var(--color);
+            transition: 1s;
+            z-index: 1;
+          }
+        }
+      }
+      .bych{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -20px;
+        margin-bottom: -30px;
+      }
+    }
+    .lines{
+      position: absolute;
+      width: 680px;
+      right: -120px;
+    }
+  }
   
   
 
