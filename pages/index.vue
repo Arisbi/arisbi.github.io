@@ -72,7 +72,7 @@
                   <a id="menu_item" href="/projects">
                     <span>01</span>
                     Proyectos
-                    <img class="menu_image" src="@/static/img/Astronaut-Aris2.png" style="object-fit: cover" alt="">
+                    <img class="menu_image" src="@/assets/Astronaut-Aris2.png" style="object-fit: cover" alt="">
                   </a>
                 </li>
                 <li>
@@ -170,16 +170,34 @@ export default {
   methods: {
     startDesktop: function(){
 
-      var mql = window.matchMedia('(min-width: 720px)');
+      var mql = window.matchMedia('(max-width: 720px)');
 
       function screenTest(e) {
         if (e.matches) {
-           $('#menu_item, #menu_item2, #menu_item3, #menu_item4, #menu_item5').mousemove(function(e) {
+          /* the viewport is less than than 720 pixels wide */
+          $("#menu_item").mouseenter(function(){
+           $(".menu_image").css({display: 'inline-block'});
+         });
+         $("#menu_item2").mouseenter(function(){
+           $(".menu_image2").css({display: 'inline-block'});
+         });
+         $("#menu_item3").mouseenter(function(){
+           $(".menu_image3").css({display: 'inline-block'});
+         });
+         $("#menu_item4").mouseenter(function(){
+           $(".menu_image4").css({display: 'inline-block'});
+         });
+         $("#menu_item5").mouseenter(function(){
+           $(".menu_image5").css({display: 'inline-block'});
+         });
+        } else {
+
+          $('#menu_item, #menu_item2, #menu_item3, #menu_item4, #menu_item5').mousemove(function(e) {
           $('.menu_image, .menu_image2, .menu_image3, .menu_image4, .menu_image5').offset({
               left: e.pageX + 20 ,
               top: e.pageY - 50 ,
           });
-        });
+         });
         // Tengo multiples elementos (.menu_image, .menu_image2, .menu_image3) que ocupan diferentes y los mismos 
         // eventos (mouseenter) pero con diferente funcion (.css display block, .css display none) https://stackoverflow.com/questions/19257752/jquery-same-function-for-multiple-elements-and-multiple-events/19257812
 
@@ -188,6 +206,34 @@ export default {
          });
          $("#menu_item").mouseleave(function(){
            $(".menu_image").css({display: 'none'});
+         });
+
+         $("#menu_item2").mouseenter(function(){
+           $(".menu_image2").css({display: 'block'});
+         });
+         $("#menu_item2").mouseleave(function(){
+           $(".menu_image2").css({display: 'none'});
+         });
+
+         $("#menu_item3").mouseenter(function(){
+           $(".menu_image3").css({display: 'block'});
+         });
+         $("#menu_item3").mouseleave(function(){
+           $(".menu_image3").css({display: 'none'});
+         });
+
+         $("#menu_item4").mouseenter(function(){
+           $(".menu_image4").css({display: 'block'});
+         });
+         $("#menu_item4").mouseleave(function(){
+           $(".menu_image4").css({display: 'none'});
+         });
+
+         $("#menu_item5").mouseenter(function(){
+           $(".menu_image5").css({display: 'block'});
+         });
+         $("#menu_item5").mouseleave(function(){
+           $(".menu_image5").css({display: 'none'});
          });
 
             $("#socialmed1").mouseenter(function(){
@@ -217,11 +263,6 @@ export default {
            $("#socialmed4").mouseleave(function(){
              $(".socialmed4").css({display: 'none'});
            });
-        } else {
-          /* the viewport is less than than 720 pixels wide */
-          $("#menu_item").mouseenter(function(){
-           $(".menu_image").css({display: 'block'});
-         });
         }
       }
 
@@ -367,21 +408,24 @@ display: none;
   }
 }
 .Projects{
-    margin-top: 300px;
+    margin-top: 0px;
     h2{
-      font-size: 5rem;
+      font-size: 3rem;
+      text-align: right;
       text-transform: uppercase;
       font-weight: 400;
+      margin-bottom: 100px;
     }
     .menu_image, .menu_image3, .menu_image5{
         width: 25rem;
+        margin: 40px 0px;
     }
     .menu_image2, .menu_image4{
         width: 25rem;
-        
+        margin: 40px 0px;
     }
     .projectsOnly{
-      margin-top: -70px;
+      margin-top: 0px;
       ul{
         padding: 20px;
         list-style: none;
@@ -394,21 +438,20 @@ display: none;
             text-transform: uppercase;
             z-index: 1;
             font-weight: 400;
-            letter-spacing: 14px;
+            letter-spacing: 5px;
+            text-decoration-line: underline;
+            line-height: 0.8;
             span{
               position: relative;
-              font-size: 35px;
-              bottom: 20px;
-              left: 16px;
+              z-index: -2;
+              font-size: 130px;
               letter-spacing: 8px;
-              font-weight: 200;
+              font-weight: 800;
+              float: left;
+              -webkit-text-stroke: 1px black;
+              -webkit-text-fill-color: rgba(255, 255, 255, 0);
+              text-decoration-line: none;
             }
-          }
-          a:hover{
-            font-weight: 800;
-            text-decoration: none;
-            color: #000000;
-            z-index: 1;
           }
         }
       }
@@ -439,7 +482,7 @@ display: none;
         font-weight: 600;
       }
       ul{
-        padding: 70px 100px;
+        padding: 70px 40px;
         list-style: none;
         li{
             padding-left: 10px;
@@ -448,6 +491,9 @@ display: none;
             color: var(--color);
             font-size: 36px;
             font-weight: 600;
+        }
+        img{
+          display: none;
         }
         a:hover{
             font-weight: 600;
@@ -458,8 +504,6 @@ display: none;
         }
       }
       .bych{
-        margin-left: auto;
-        margin-right: auto;
         margin-top: -20px;
         margin-bottom: -30px;
       }
@@ -558,6 +602,7 @@ display: none;
     margin-top: 300px;
     h2{
       font-size: 5rem;
+      text-align: left;
       text-transform: uppercase;
       font-weight: 400;
     }
@@ -583,13 +628,16 @@ display: none;
             z-index: 1;
             font-weight: 400;
             letter-spacing: 14px;
+            text-decoration-line: none;
             span{
               position: relative;
               font-size: 35px;
               bottom: 20px;
               left: 16px;
+              float: none;
               letter-spacing: 8px;
               font-weight: 200;
+              -webkit-text-stroke-width: medium;
             }
           }
           a:hover{

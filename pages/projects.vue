@@ -1,13 +1,63 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        About
-      </h1>
-      <nuxt-link to="/">Click me</nuxt-link>
-      <Gallery/>
-    </div>
+  <div>
+    <div class="containment">
+      <h2>Lo más destacado</h2>
+
+      <span>2021</span>
+      <a class="cardo" href="">
+        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
+        <div class="info">
+          <h3>Nombre projecto</h3>
+          <p>08/2021</p>
+          <p>Descripcion breve de proyecto</p>
+        </div>
+      </a>
+      <span>2020</span>
+      <a class="cardo" href="">
+        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
+        <div class="info">
+          <h3>Nombre projecto</h3>
+          <p>08/2021</p>
+          <p>Descripcion breve de proyecto</p>
+        </div>
+      </a>
+      <span>2019</span>
+      <a class="cardo" href="">
+        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
+        <div class="info">
+          <h3>Nombre projecto</h3>
+          <p>08/2021</p>
+          <p>Descripcion breve de proyecto</p>
+        </div>
+      </a>
+      <span>2018</span>
+      <a class="cardo" href="">
+        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
+        <div class="info">
+          <h3>Nombre projecto</h3>
+          <p>08/2021</p>
+          <p>Descripcion breve de proyecto</p>
+        </div>
+      </a>
+
+      <a class="cardo" href="">
+        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
+        <div class="info">
+          <h3>Nombre projecto</h3>
+          <p>08/2021</p>
+          <p>Descripcion breve de proyecto</p>
+        </div>
+      </a>
+
+      <a class="cardo" href="">
+        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
+        <div class="info">
+          <h3>Nombre projecto</h3>
+          <p>08/2021</p>
+          <p>Descripcion breve de proyecto</p>
+        </div>
+      </a>
+      </div>
   </div>
 </template>
 
@@ -20,43 +70,52 @@ export default {
 }
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+<style lang="scss" scoped>
+.containment{
+  .items{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    .cardo{
+      img{
+        width: 25rem;
+      }
+    }
+  }
 }
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+@media (min-width: 720px) {
+  .containment{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100vh;
+    h2{
+      position: absolute;
+      z-index: 1;
+      margin-top: 120px;
+      font-size: 4rem;
+    }
+    span{
+      position: relative;
+      font-weight: 700;
+      z-index: -1;
+      font-size: 10rem;
+      -webkit-text-stroke: 1px black;
+      -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    }
+    .cardo{
+      margin: 50px;
+      display: flex;
+      align-items: flex-end;
+      img{
+        width: 23rem;
+        height: 28rem;
+      }
+      .info{
+        width: 200px;
+        margin: 50px;
+      }
+    }
+  }
 }
 </style>
