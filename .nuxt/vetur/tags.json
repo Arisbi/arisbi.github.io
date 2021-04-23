@@ -29,6 +29,9 @@
   "Wave": {
     "description": "Auto imported from components/Wave.vue"
   },
+  "Galleryimage": {
+    "description": "Auto imported from components/galleryimage.vue"
+  },
   "Menu": {
     "description": "Auto imported from components/menu.vue"
   }

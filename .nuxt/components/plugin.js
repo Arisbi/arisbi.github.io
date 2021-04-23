@@ -11,6 +11,7 @@ const components = {
   More: () => import('../../components/More.vue' /* webpackChunkName: "components/more" */).then(c => c.default || c),
   SmallCircle: () => import('../../components/SmallCircle.vue' /* webpackChunkName: "components/small-circle" */).then(c => c.default || c),
   Wave: () => import('../../components/Wave.vue' /* webpackChunkName: "components/wave" */).then(c => c.default || c),
+  Galleryimage: () => import('../../components/galleryimage.vue' /* webpackChunkName: "components/galleryimage" */).then(c => c.default || c),
   Menu: () => import('../../components/menu.vue' /* webpackChunkName: "components/menu" */).then(c => c.default || c)
 }
 

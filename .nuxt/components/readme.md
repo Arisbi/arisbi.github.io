@@ -16,4 +16,5 @@ You can directly use them in pages and other components without the need to impo
 - `<More>` | `<more>` (components/More.vue)
 - `<SmallCircle>` | `<small-circle>` (components/SmallCircle.vue)
 - `<Wave>` | `<wave>` (components/Wave.vue)
+- `<Galleryimage>` | `<galleryimage>` (components/galleryimage.vue)
 - `<Menu>` | `<menu>` (components/menu.vue)

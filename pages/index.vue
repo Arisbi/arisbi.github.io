@@ -170,7 +170,9 @@ export default {
   methods: {
     startDesktop: function(){
 
-      var mql = window.matchMedia('(max-width: 720px)');
+      const mediaQuery = window.matchMedia('(max-width: 720px)');
+      // Register event listener
+        mediaQuery.addListener(screenTest)
 
       function screenTest(e) {
         if (e.matches) {
@@ -178,6 +180,10 @@ export default {
           $("#menu_item").mouseenter(function(){
            $(".menu_image").css({display: 'inline-block'});
          });
+          $("#menu_item").mouseleave(function(){
+           $(".menu_image").css({display: 'block'});
+         });
+
          $("#menu_item2").mouseenter(function(){
            $(".menu_image2").css({display: 'inline-block'});
          });
@@ -190,7 +196,8 @@ export default {
          $("#menu_item5").mouseenter(function(){
            $(".menu_image5").css({display: 'inline-block'});
          });
-        } else {
+        } 
+        else {
 
           $('#menu_item, #menu_item2, #menu_item3, #menu_item4, #menu_item5').mousemove(function(e) {
           $('.menu_image, .menu_image2, .menu_image3, .menu_image4, .menu_image5').offset({
@@ -265,10 +272,8 @@ export default {
            });
         }
       }
-
-      mql.addListener(screenTest);
-
-       
+        // Initial check
+        screenTest(mediaQuery);
     }
   },
 }
@@ -448,7 +453,7 @@ display: none;
               letter-spacing: 8px;
               font-weight: 800;
               float: left;
-              -webkit-text-stroke: 1px black;
+              -webkit-text-stroke: 1px var(--color);;
               -webkit-text-fill-color: rgba(255, 255, 255, 0);
               text-decoration-line: none;
             }

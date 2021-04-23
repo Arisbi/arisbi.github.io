@@ -20,7 +20,8 @@
     "nuxt-i18n": "^6.22.2",
     "push-dir": "^0.4.1",
     "sass": "^1.32.8",
-    "sass-loader": "10.1.1"
+    "sass-loader": "10.1.1",
+    "vue-horizontal-scroll": "^0.2.4"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^2.0.5"

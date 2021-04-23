@@ -8,6 +8,7 @@ export { default as Mobindex } from '../../components/Mobindex.vue'
 export { default as More } from '../../components/More.vue'
 export { default as SmallCircle } from '../../components/SmallCircle.vue'
 export { default as Wave } from '../../components/Wave.vue'
+export { default as Galleryimage } from '../../components/galleryimage.vue'
 export { default as Menu } from '../../components/menu.vue'
 
 export const LazyBigCircle = import('../../components/BigCircle.vue' /* webpackChunkName: "components/big-circle" */).then(c => c.default || c)
@@ -20,4 +21,5 @@ export const LazyMobindex = import('../../components/Mobindex.vue' /* webpackChu
 export const LazyMore = import('../../components/More.vue' /* webpackChunkName: "components/more" */).then(c => c.default || c)
 export const LazySmallCircle = import('../../components/SmallCircle.vue' /* webpackChunkName: "components/small-circle" */).then(c => c.default || c)
 export const LazyWave = import('../../components/Wave.vue' /* webpackChunkName: "components/wave" */).then(c => c.default || c)
+export const LazyGalleryimage = import('../../components/galleryimage.vue' /* webpackChunkName: "components/galleryimage" */).then(c => c.default || c)
 export const LazyMenu = import('../../components/menu.vue' /* webpackChunkName: "components/menu" */).then(c => c.default || c)
