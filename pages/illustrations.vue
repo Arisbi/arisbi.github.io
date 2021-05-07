@@ -1,27 +1,35 @@
 <template>
   <div>
-    <b-container fluid class="spacing-title spacing-title-mob text-center">
-      <svg class="lines-title" width="1440" height="170" viewBox="0 0 1440 170" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-2 117.5C44 71.6667 159.492 1.50001 253.5 1.5C500 1.49999 584.334 157.5 753.5 157.5C924.5 157.5 1042 97 1155 100.5C1245.4 103.3 1359 131 1439 169" stroke="#EBECEE" stroke-width="2"/>
+    <b-container fluid style="overflow: hidden;">
+
+      <svg class="lines" width="1440" height="170" viewBox="0 0 1440 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-2 117.5C44 71.6667 159.492 1.50001 253.5 1.5C500 1.49999 584.334 157.5 753.5 157.5C924.5 157.5 1042 97 1155 100.5C1245.4 103.3 1359 131 1439 169" stroke="#EBECEE" stroke-width="3"/>
       </svg>
-      <h2>Ilustraciones</h2>
-      <div class="horizontal-menu">
-          <a href="" class="active-subnav">Ilustraciones</a>
+
+      <h2 class="text-center"> Ilustraciones </h2>
+
+      <div class="horizontal-menu text-center">
+          <a class="active-subnav">Ilustraciones</a>
           <a href="/photography">Fotografía</a>
-          <a href="/motiongraphics">Motion Graphics</a>
+          <a href="/motiongraphics" >Motion Graphics</a>
           <a href="/webdesign">Web design</a>
       </div>
+
       <div class="leng">
           <nuxt-link :to="switchLocalePath('en')">En</nuxt-link>
           <nuxt-link :to="switchLocalePath('es')">Es</nuxt-link>
       </div>
+
     </b-container>
-    <b-container fluid class="gallery-flex gallery-flex-mob">
-          <Products
+
+      <div class="gallery">
+        <Products
           v-for="product in products"
           :key="product.title"
           :product="product"
           />
+      </div>
+          
 
           <b-modal hide-footer hide-header id="imagemodal">
               <button type="button" aria-label="Close" class="close" @click="$bvModal.hide('imagemodal')">
@@ -31,7 +39,7 @@
                       <path d="M17.4632 14.6365C16.7102 13.8284 15.4447 13.7838 14.6365 14.5368C13.8284 15.2898 13.7838 16.5553 14.5368 17.3635L17.4632 14.6365ZM35.0368 39.3635C35.7898 40.1716 37.0553 40.2162 37.8635 39.4632C38.6716 38.7102 38.7162 37.4447 37.9632 36.6365L35.0368 39.3635ZM37.9632 17.3635C38.7162 16.5553 38.6716 15.2898 37.8635 14.5368C37.0553 13.7838 35.7898 13.8284 35.0368 14.6365L37.9632 17.3635ZM14.5368 36.6365C13.7838 37.4447 13.8284 38.7102 14.6365 39.4632C15.4447 40.2162 16.7102 40.1716 17.4632 39.3635L14.5368 36.6365ZM14.5368 17.3635L35.0368 39.3635L37.9632 36.6365L17.4632 14.6365L14.5368 17.3635ZM35.0368 14.6365L14.5368 36.6365L17.4632 39.3635L37.9632 17.3635L35.0368 14.6365Z" fill="white"/>
                   </svg>
               </button>
-              <img src="" class="imagepreview1" style="object-fit: cover" >
+              <img src="" class="imagepreview" style="object-fit: cover" >
               <b-row class="title-modal">
                   <b-col md="6">
                       <h4 class="titles1"></h4>
@@ -41,6 +49,7 @@
                   </b-col>
               </b-row>
           </b-modal>
+
           <div id="overlay-show" class="overlay-hidden">
             <div class="close-gallery">
               <svg class="return-ellipse" width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg"><circle opacity="0.9" cx="20.5" cy="20.5" r="20.5" fill="black"/></svg>
@@ -49,13 +58,12 @@
 
             <img src="" class="imagepreview" style="object-fit: cover; object-position: center;">
             <div class="titlepreview">
-              <h4 class="titles2"></h4>
-              <h5 class="hashtag1"></h5>
+              <h4 class="titles1"></h4>
+              <h5 class="hashtags"></h5>
             </div>
           </div>
           
-    </b-container>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -141,21 +149,23 @@ export default {
     Products,
   },
   mounted: function() {
-        this.startModal(),
-        this.sideBarGallery()
-      },
+    this.sideBarGallery()
+  },
   methods: {
-     startModal: function(){
-       $('.pop').on('click', function() {
-             $('.imagepreview1').attr('src', $(this).find('img').attr('src'));
-             $('.titles1').text($(this).find('h4').text());
-             $('.hashtags').text($(this).find('h5').text());
-           });
-       },
-        hideModal() {
-         this.$refs['my-modal'].hide()
-       },
+    //Mobile
     sideBarGallery: function(){
+
+            // media query event handler
+      if (matchMedia) {
+      const mq = window.matchMedia("(max-width: 500px)");
+      mq.addListener(WidthChange);
+      WidthChange(mq);
+      }
+
+      // media query change
+      function WidthChange(mq) {
+      if (mq.matches) {
+      
       $('.overlay-img').click(function(){
         $('#overlay-show').show();
         $('body').css('overflow', 'hidden');
@@ -167,74 +177,89 @@ export default {
 
       $('.overlay-img').on('click', function() {
             $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-            $('.titles2').text($(this).find('h4').text());
-            $('.hashtag1').text($(this).find('h5').text());
+            $('.titles1').text($(this).find('h4').text());
+            $('.hashtags').text($(this).find('h5').text());
         });
-
-      }
+      } else {
+        $('.pop').on('click', function() {
+             $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+             $('.titles1').text($(this).find('h4').text());
+             $('.hashtags').text($(this).find('h5').text());
+             $('body').css('overflow', 'auto');
+           });
+          }
+        }
+      },
     },
 }
 </script>
 
 <style lang="scss">
 
-// Gallery
-.lines-title-mob{
-    position: absolute;
-    top: 100px;
-    width: 100%;
-    height: auto;
-    left: 0;
-    z-index: -1;    
+.lines{
+    position: relative;
+    width: 260vw;
+    z-index: -1;
+    left: -20rem; 
 }
-.spacing-title-mob{
-    margin-top: 7rem;
-    margin-bottom: 3rem;
-    h2{
-      font-size: 2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.3rem;
-      font-weight: 600;
-      margin: 50px 0;
-    }
-    a{
-        text-decoration: none;
-        color: black;
-        font-weight: 200;
-        padding: 10px;
-    }
-    .active-subnav{
-        font-weight: 600!important;
-        background-color: #EBECEE;
-        padding: 20px;
-        border-radius: 16px;
-        pointer-events: none;
-    }
-    .horizontal-menu{
-        overflow: auto;
-        white-space: nowrap;
-        padding: 2rem 0;
-    }
+h2{
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: 600;
+  margin: 50px 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 200;
+    padding: 10px;
+}
+.active-subnav{
+    font-weight: 600!important;
+    background-color: #EBECEE;
+    padding: 20px;
+    border-radius: 16px;
+    pointer-events: none;
+}
+.horizontal-menu{
+    overflow: auto;
+    white-space: nowrap;
+    padding: 2rem 0;
+}
+.leng{
+  display: block;
+  width: 40px;
+}
+  #imagemodal___BV_modal_outer_{
+    display: none!important;
   }
-  .gallery-flex-mob{
-    padding: 0 0.5rem;
+
+
+.gallery{
+    padding: 0 16px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 210px);
+    grid-template-rows: auto 1fr;
     grid-gap: 16px;
-    margin-bottom: 6rem;
-    grid-row-gap: 5rem;
+    margin-bottom: 4rem;
     .griditem{
       background-color: gray;
       min-height: 100px;
       width: 100%;
       border-radius: 8px;
-      padding: 0px;
-      h4{
-        font-size: 1.2rem;
-        margin: 0.3rem 0rem;
+    }
+    a{
+        padding: 0;
       }
-    }  
+    img{
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+      }
+      .text{
+        display: none;
+      }
 }
 
 //Overlay
@@ -286,104 +311,28 @@ export default {
 
 
 
-
 @media (min-width: 720px) { 
-  .container {
+  .lines{
     position: relative;
-    width: 50%;
-    img{
-      width:100%;
-      height: 100%;
-    }
-    .text {
-      color: white;
-      font-size: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0;
-      transition: .5s ease;
-      background-color: #0000007a;
-    }
+    width: 100vw;
+    z-index: -1;
+    left: -15px;
   }
-  .container:hover .overlay {
-    opacity: 1;
+  h2{
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    font-weight: 500;
+    margin: 50px 0;
   }
-  //Gallery - Illustration
-
-  .spacing-title{
-    margin-top: 8rem;
-    margin-bottom: 4rem;
-    .lines-title{
-      position: absolute;
-      top: 100px;
-      width: 100%;
-      height: auto;
-      left: 0;
-      z-index: -1;
-    }
-    h2{
-      font-size: 2.3rem;
-      text-transform: uppercase;
-      letter-spacing: 1rem;
-      font-weight: 500;
-      margin: 50px 0;
-    }
-    ul{
-      padding: 0;
-      li{
-        width: 10rem;
-        display: inline-block;
-        a{
-          text-decoration: none;
-          color: black;
-          font-weight: 200;
-          padding: 0.5rem;
-        }
-        a:hover{
-          font-weight: 600;
-      }
-      }
-    }
-    .active-subnav{
-      font-weight: 500 !important;
-      background-color: #EBECEE;
-      padding: 0.5rem 0.75rem;
-      border-radius: 0.5rem;
-      pointer-events: none;
-      font-size: 1rem;
-    }
-    .language-set2{
-      position: absolute;
-      top: 13rem;
-      left: 1rem;
-      font-weight: 500;
-      z-index: 9999;
-      font-size: 1.3rem;
-      a{
-        display: block;
-      }
-      .active{
-        color: black;
-        font-weight: 700;
-        text-decoration: underline;
-      }
-    }
+  //Not to show mobile on desktop
+  #overlay-show{
+    display: none!important;
   }
-  .gallery-flex{
+  #imagemodal___BV_modal_outer_{
+    display: inline-block!important;
+  }
+  .gallery{
     padding: 0 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -394,48 +343,50 @@ export default {
       background-color: gray;
       min-height: 100px;
       width: 100%;
-      border-radius: 8px;
-      padding: 0px;
-      img{
-        border-radius: 8px;
-      }
+      border-radius: 8px; 
     }
-    .item-1{
-        // Row start / Column Start / Row end / Column end
-        grid-area: 1 / 1 / 3 / 2;
+    a{
+        padding: 0;
       }
-      .item-2{
+    img{
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
       }
-      .item-3{
-        grid-area: 1 / 3 / span 2 / span 2;
+    img:focus{
+      transition: transform .5s ease-in-out,opacity 1s;
+      transform: scale(1.3) rotate(2deg);
+    }
+      .text{
+        display: none;
       }
-      .item-4{
-        //Dont touch it
-      }
-      .item-5{
-      }
-      .item-6{
-      }
-      .item-7{
-        grid-column: 3 / span 2;
-      }
-      .item-8{
-        grid-row: 4 / span 2;
-      }
-      .item-9{
-        grid-area: 4 / 2 / span 2 / span 2;
-      }
-      .item-10{
-        grid-row: 4 / span 2;
-      }
+      
   }
+  .item-1{
+    // Row start / Column Start / Row end / Column end
+    grid-area: 1 / 1 / 3 / 2;
+  }
+  .item-3{
+    grid-area: 1 / 3 / span 2 / span 2;
+  }
+  .item-7{
+      grid-column: 3 / span 2;
+  }
+  .item-8{
+    grid-row: 4 / span 2;
+  }
+  .item-9{
+    grid-area: 4 / 2 / span 2 / span 2;
+  }
+  .item-10{
+    grid-row: 4 / span 2;
+  }
+ 
 
+  
   .b-sidebar > .b-sidebar-header .close {
-
     font-size: 3rem;
   }
-
-
   // Modal
   button:focus{
     outline: none;
@@ -465,5 +416,4 @@ export default {
     border: 0px solid rgba(0, 0, 0, 0);
   }
 }
-
 </style>

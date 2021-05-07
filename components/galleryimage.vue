@@ -1,8 +1,7 @@
 <template>
-<div class="grid-item">
-      <div v-b-modal.imagemodal class="contain pop" :class="product.item">
+    <div v-b-modal.imagemodal class="pop griditem" :class="product.item">
         <a class="product overlay-img">
-            <img :src="product.src" alt="" style="object-fit: cover">
+            <img :src="product.src" alt="" style="object-fit: cover;">
             <div class="overlay">
                 <div class="text">
                     <h4>{{product.title}}</h4>
@@ -10,8 +9,7 @@
                 </div>
             </div>
         </a>
-      </div>
-      </div>
+    </div>
 </template>
 
 <script>

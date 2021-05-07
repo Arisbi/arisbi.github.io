@@ -21,7 +21,7 @@
       </div>
 
     </b-container>
-    <div class="">
+
       <div class="gallery">
         <Products
           v-for="product in products"
@@ -64,7 +64,6 @@
           </div>
           
     </div>
-  </div>
 </template>
 
 <script>
@@ -151,11 +150,22 @@ export default {
   },
   mounted: function() {
     this.sideBarGallery()
-    this.startModal()
   },
   methods: {
     //Mobile
     sideBarGallery: function(){
+
+            // media query event handler
+      if (matchMedia) {
+      const mq = window.matchMedia("(max-width: 500px)");
+      mq.addListener(WidthChange);
+      WidthChange(mq);
+      }
+
+      // media query change
+      function WidthChange(mq) {
+      if (mq.matches) {
+      
       $('.overlay-img').click(function(){
         $('#overlay-show').show();
         $('body').css('overflow', 'hidden');
@@ -170,19 +180,16 @@ export default {
             $('.titles1').text($(this).find('h4').text());
             $('.hashtags').text($(this).find('h5').text());
         });
-
-      },
-      //Desktop
-     startModal: function(){
-       $('.pop').on('click', function() {
+      } else {
+        $('.pop').on('click', function() {
              $('.imagepreview').attr('src', $(this).find('img').attr('src'));
              $('.titles1').text($(this).find('h4').text());
              $('.hashtags').text($(this).find('h5').text());
+             $('body').css('overflow', 'auto');
            });
-       },
-        hideModal() {
-         this.$refs['my-modal'].hide()
-       },
+          }
+        }
+      },
     },
 }
 </script>
@@ -224,10 +231,35 @@ a{
   display: block;
   width: 40px;
 }
-#imagemodal___BV_modal_outer_{
-  display: none!important;
-}
+  #imagemodal___BV_modal_outer_{
+    display: none!important;
+  }
 
+.gallery{
+    padding: 0 16px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-gap: 16px;
+    margin-bottom: 4rem;
+    .griditem{
+      background-color: gray;
+      min-height: 100px;
+      width: 100%;
+      border-radius: 8px;
+    }
+    a{
+        padding: 0;
+      }
+    img{
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+      }
+      .text{
+        display: none;
+      }
+}
 
 //Overlay
 
@@ -277,8 +309,6 @@ a{
 }
 
 
-
-
 @media (min-width: 720px) { 
   .lines{
     position: relative;
@@ -293,115 +323,14 @@ a{
     font-weight: 500;
     margin: 50px 0;
   }
-
-#overlay-show{
-  display: none!important;
-}
-#imagemodal___BV_modal_outer_{
-  display: inline-block!important;
-}
-
-
-
-.gallery{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  .grid-item{
-      .contain{
-      outline: 0;
-      img{
-        border-radius: 8px;
-        width: 15rem; 
-      }
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 100%;
-      width: 100%;
-      opacity: 0;
-      transition: .5s ease;
-      background-color: #0000007a;
-      .text {
-        color: white;
-        font-size: 20px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        text-align: center;
-      }
-    }
+  //Not to show mobile on desktop
+  #overlay-show{
+    display: none!important;
   }
-  .contain:hover .overlay {
-    opacity: 1;
+  #imagemodal___BV_modal_outer_{
+    display: inline-block!important;
   }
-}
-
-
-
-
-
-  .spacing-title{
-    margin-top: 8rem;
-    margin-bottom: 4rem;
-    
-    h2{
-      font-size: 2.3rem;
-      text-transform: uppercase;
-      letter-spacing: 1rem;
-      font-weight: 500;
-      margin: 50px 0;
-    }
-    ul{
-      padding: 0;
-      li{
-        width: 10rem;
-        display: inline-block;
-        a{
-          text-decoration: none;
-          color: black;
-          font-weight: 200;
-          padding: 0.5rem;
-        }
-        a:hover{
-          font-weight: 600;
-      }
-      }
-    }
-    .active-subnav{
-      font-weight: 500 !important;
-      background-color: #EBECEE;
-      padding: 0.5rem 0.75rem;
-      border-radius: 0.5rem;
-      pointer-events: none;
-      font-size: 1rem;
-    }
-    .language-set2{
-      position: absolute;
-      top: 13rem;
-      left: 1rem;
-      font-weight: 500;
-      z-index: 9999;
-      font-size: 1.3rem;
-      a{
-        display: block;
-      }
-      .active{
-        color: black;
-        font-weight: 700;
-        text-decoration: underline;
-      }
-    }
-  }
-
-  .gallery-flex{
+  .gallery{
     padding: 0 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -413,42 +342,42 @@ a{
       min-height: 100px;
       width: 100%;
       border-radius: 8px;
-      padding: 0px;
-      img{
-        border-radius: 8px;
-      }
     }
-    .item-1{
-        // Row start / Column Start / Row end / Column end
-        grid-area: 1 / 1 / 3 / 2;
+    a{
+        padding: 0;
       }
-      .item-2{
+    img{
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
       }
-      .item-3{
-        grid-area: 1 / 3 / span 2 / span 2;
+      .text{
+        display: none;
       }
-      .item-4{
-        //Dont touch it
-      }
-      .item-5{
-      }
-      .item-6{
-      }
-      .item-7{
-        grid-column: 3 / span 2;
-      }
-      .item-8{
-        grid-row: 4 / span 2;
-      }
-      .item-9{
-        grid-area: 4 / 2 / span 2 / span 2;
-      }
-      .item-10{
-        grid-row: 4 / span 2;
-      }
+      
   }
+  .item-1{
+    // Row start / Column Start / Row end / Column end
+    grid-area: 1 / 1 / 3 / 2;
+  }
+  .item-3{
+    grid-area: 1 / 3 / span 2 / span 2;
+  }
+  .item-7{
+      grid-column: 3 / span 2;
+  }
+  .item-8{
+    grid-row: 4 / span 2;
+  }
+  .item-9{
+    grid-area: 4 / 2 / span 2 / span 2;
+  }
+  .item-10{
+    grid-row: 4 / span 2;
+  }
+ 
 
-
+  
   .b-sidebar > .b-sidebar-header .close {
     font-size: 3rem;
   }
@@ -481,5 +410,4 @@ a{
     border: 0px solid rgba(0, 0, 0, 0);
   }
 }
-
 </style>
