@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/en/motiongraphics", {data:[{}],fetch:{},mutations:void 0});
