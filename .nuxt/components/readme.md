@@ -8,12 +8,9 @@ You can directly use them in pages and other components without the need to impo
 
 - `<BigCircle>` | `<big-circle>` (components/BigCircle.vue)
 - `<ByCh>` | `<by-ch>` (components/ByCh.vue)
-- `<Gallery>` | `<gallery>` (components/Gallery.vue)
 - `<Lines>` | `<lines>` (components/Lines.vue)
 - `<LogoCh>` | `<logo-ch>` (components/LogoCh.vue)
 - `<LogoChBig>` | `<logo-ch-big>` (components/LogoChBig.vue)
-- `<Mobindex>` | `<mobindex>` (components/Mobindex.vue)
-- `<More>` | `<more>` (components/More.vue)
 - `<SmallCircle>` | `<small-circle>` (components/SmallCircle.vue)
 - `<Wave>` | `<wave>` (components/Wave.vue)
 - `<Galleryimage>` | `<galleryimage>` (components/galleryimage.vue)

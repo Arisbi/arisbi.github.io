@@ -170,6 +170,8 @@ export default {
   methods: {
     startDesktop: function(){
 
+      window.scrollTo(window.scrollX, window.scrollY - 100);
+
       const mediaQuery = window.matchMedia('(max-width: 720px)');
       // Register event listener
         mediaQuery.addListener(screenTest)
@@ -283,15 +285,15 @@ export default {
 
 .mobile{
     display: block;
-  }
+}
 .desktop{
 display: none;
 }
 
-.glass{
-  position: absolute;
-  height: 700px;
-  width: 1200px;
+#about:before, #work:before{
+  height: 100px;
+  display: block;
+  content: '';
 }
 
 .Intro{
@@ -349,6 +351,8 @@ display: none;
       font-weight: 700;
     }
   }
+
+
 .About{
   margin-top: 150px;
   padding: 0px 50px;
@@ -410,6 +414,7 @@ display: none;
     position: absolute;
     left: -110px;
     z-index: -2;
+    width: 38rem;
   }
 }
 .Projects{
@@ -604,7 +609,7 @@ display: none;
     }
   }
   .Projects{
-    margin-top: 300px;
+    margin-top: 0px;
     h2{
       font-size: 5rem;
       text-align: left;

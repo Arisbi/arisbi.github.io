@@ -5,9 +5,6 @@
   "ByCh": {
     "description": "Auto imported from components/ByCh.vue"
   },
-  "Gallery": {
-    "description": "Auto imported from components/Gallery.vue"
-  },
   "Lines": {
     "description": "Auto imported from components/Lines.vue"
   },
@@ -16,12 +13,6 @@
   },
   "LogoChBig": {
     "description": "Auto imported from components/LogoChBig.vue"
-  },
-  "Mobindex": {
-    "description": "Auto imported from components/Mobindex.vue"
-  },
-  "More": {
-    "description": "Auto imported from components/More.vue"
   },
   "SmallCircle": {
     "description": "Auto imported from components/SmallCircle.vue"

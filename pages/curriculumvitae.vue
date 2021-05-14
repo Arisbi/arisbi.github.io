@@ -6,17 +6,12 @@
         About
       </h1>
       <nuxt-link to="/">Click me</nuxt-link>
-      <Gallery/>
     </div>
   </div>
 </template>
 
 <script>
-import Gallery from "~/components/Gallery.vue"
 export default {
-  components:{
-    Gallery
-  }
 }
 </script>
 

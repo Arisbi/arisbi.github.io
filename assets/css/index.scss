@@ -52,28 +52,36 @@ src: url(/assets/fonts/HelveticaNeue-Heavy.ttf) format('truetype');
 :root {
     --color:  #121313;
     --color-primary: #F0F2F8;
+    --color-header: #ffffff;
     --color-secondary: #0e2233;
     --bg: #ffffff;
     --bg-secondary: #F0F2F8;
     --border-color: #ddd;
+    --color-link: #424242;
+    --color-hover: #000000;
 }
 
 .light-mode {
     --color:  #121313;
     --color-primary: #F0F2F8;
+    --color-header: #ffffff;
     --color-secondary: #0e2233;
     --bg: #ffffff;
     --bg-secondary: #F0F2F8;
     --border-color: #ddd;
+    --color-link: #424242;
+    --color-hover: #000000;
   }
   
   .dark-mode {
     --color: #d3d3d3;
     --color-primary: #4A4B4E;
+    --color-header: #313235;
     --color-secondary: #fdfdfd;
     --bg: #1B1C22;
     --bg-secondary: #27282D;
     --border-color: #000000;
+    --color-link: #ffffff;
   }
 
   body{
