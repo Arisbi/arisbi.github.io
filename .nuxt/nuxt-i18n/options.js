@@ -16,7 +16,7 @@ export const options = {
   defaultLocaleRouteNameSuffix: "default",
   strategy: "prefix_except_default",
   lazy: true,
-  langDir: "/Users/Charis/Documents/charisbi/locales",
+  langDir: "/Users/mac/Documents/Charis/Mine/charisbi/locales",
   rootRedirect: null,
   detectBrowserLanguage: {"alwaysRedirect":false,"cookieCrossOrigin":false,"cookieDomain":null,"cookieKey":"i18n_redirected","cookieSecure":false,"fallbackLocale":"","onlyOnNoPrefix":false,"onlyOnRoot":false,"useCookie":true},
   differentDomains: false,

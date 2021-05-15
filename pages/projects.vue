@@ -4,8 +4,8 @@
     <div class="containment">
       <h2>Lo más destacado</h2>
 
-      <span class="leftSpan">2021</span>
-      <a class="cardo cardo-left" href="">
+      <span class="leftSpan top-date">2021</span>
+      <a class="cardo cardo-left cardo-bottom" href="">
         <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
         <div class="info">
           <h3>Nombre projecto</h3>
@@ -14,9 +14,9 @@
           <p>Descripcion breve de proyecto</p>
         </div>
       </a>
-      <span class="rightSpan">2020</span>
-      <a class="cardo cardo-right" href="">
-        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
+      <span class="rightSpan bottom-date">2020</span>
+      <a class="cardo cardo-right cardo-top" href="">
+        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover; margin-left: -39rem;">
         <div class="info">
           <h3>Nombre projecto</h3>
           <p>08/2021</p>
@@ -24,9 +24,9 @@
           <p>Descripcion breve de proyecto</p>
         </div>
       </a>
-      <span class="leftSpan">2019</span>
-      <a class="cardo cardo-left" href="">
-        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
+      <span class="leftSpan top-date" style="top: 4rem;">2019</span>
+      <a class="cardo cardo-left cardo-bottom" href="">
+        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover; margin-left: -39rem;">
         <div class="info">
           <h3>Nombre projecto</h3>
           <p>08/2021</p>
@@ -34,19 +34,9 @@
           <p>Descripcion breve de proyecto</p>
         </div>
       </a>
-      <span class="rightSpan">2018</span>
-      <a class="cardo cardo-right" href="">
-        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
-        <div class="info">
-          <h3>Nombre projecto</h3>
-          <p>08/2021</p>
-          <hr>
-          <p>Descripcion breve de proyecto</p>
-        </div>
-      </a>
-
-      <a class="cardo cardo-left" href="">
-        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
+      <span class="rightSpan bottom-date">2018</span>
+      <a class="cardo cardo-right cardo-top" href="">
+        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover; margin-left: -39rem;">
         <div class="info">
           <h3>Nombre projecto</h3>
           <p>08/2021</p>
@@ -55,7 +45,17 @@
         </div>
       </a>
 
-      <a class="cardo cardo-right" href="">
+      <a class="cardo cardo-left cardo-bottom" href="">
+        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover; margin-right: 15rem; margin-left: 15rem;">
+        <div class="info">
+          <h3>Nombre projecto</h3>
+          <p>08/2021</p>
+          <hr>
+          <p>Descripcion breve de proyecto</p>
+        </div>
+      </a>
+
+      <a class="cardo cardo-right cardo-top" href="">
         <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
         <div class="info">
           <h3>Nombre projecto</h3>
@@ -96,7 +96,7 @@ export default {
     font-weight: 700;
     z-index: -1;
     font-size: 13rem;
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 1px var(--color);
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
   }
   .leftSpan{
@@ -143,8 +143,8 @@ export default {
       position: relative;
       width: 0px;
       z-index: 1;
-      margin-top: 95px;
-      font-size: 4rem;
+      margin-top: 8rem;
+      font-size: 7rem;
       text-transform: uppercase;
     }
     span{
@@ -152,7 +152,83 @@ export default {
       font-weight: 700;
       z-index: -1;
       font-size: 10rem;
-      -webkit-text-stroke: 1px black;
+      -webkit-text-stroke: 1px var(--color);
+      -webkit-text-fill-color: rgba(255, 255, 255, 0);
+      align-self: flex-end;
+    }
+    .top-date{
+      align-self: flex-start;
+      margin-left: 0px;
+      line-height: 0.6;
+      margin-top: 0px;
+      top: 13rem;
+      left: 7rem;
+      font-size: 21rem;
+    }
+    .bottom-date{
+      align-self: flex-end;
+      margin-left: 0px;
+      line-height: 0.6;
+      margin-top: 0px;
+      top: -5rem;
+      left: 7rem;
+      font-size: 21rem;
+    }
+    a:hover{
+      text-decoration: none;
+      h3:hover{
+      text-decoration: underline;
+      }
+    }
+    .cardo{
+      color: var(--color);
+      margin: 0px 50px;
+      display: flex;
+      align-items: flex-end;
+      img{
+        width: 62vh;
+        height: 72vh;
+      }
+      .info{
+        width: 200px;
+        margin: 50px;
+        a:hover{
+        text-decoration: none;
+          h3{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .cardo-top {
+      align-self: flex-start;
+    }
+    .cardo-bottom {
+      align-self: flex-end;
+    }
+  }
+}
+@media (min-width: 1440px) {
+
+}
+
+@media (min-width: 1824px) {
+  
+}
+
+@media (min-width: 2100px) {
+
+.containment{
+    h2{
+      margin-top: 8rem;
+      font-size: 7rem;
+    }
+    span{
+      position: relative;
+      font-weight: 700;
+      z-index: -1;
+      font-size: 10rem;
+      -webkit-text-stroke: 1px var(--color);
       -webkit-text-fill-color: rgba(255, 255, 255, 0);
       align-self: flex-end;
     }
@@ -168,8 +244,8 @@ export default {
       display: flex;
       align-items: flex-end;
       img{
-        width: 23rem;
-        height: 28rem;
+        width: 62vh;
+        height: 72vh;
       }
       .info{
         width: 200px;
@@ -182,6 +258,7 @@ export default {
         }
       }
     }
+    
   }
 }
 </style>

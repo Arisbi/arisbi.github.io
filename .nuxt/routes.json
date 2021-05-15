@@ -2,99 +2,99 @@
   {
     "name": "curriculumvitae___es",
     "path": "/curriculumvitae",
-    "component": "/Users/Charis/Documents/charisbi/pages/curriculumvitae.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/curriculumvitae.vue",
     "chunkName": "pages/curriculumvitae",
-    "_name": "_4696ced6"
+    "_name": "_26f18673"
   },
   {
     "name": "index___en",
     "path": "/en",
-    "component": "/Users/Charis/Documents/charisbi/pages/index.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_8ec2ef06"
+    "_name": "_6d18d84a"
   },
   {
     "name": "illustrations___es",
     "path": "/illustrations",
-    "component": "/Users/Charis/Documents/charisbi/pages/illustrations.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/illustrations.vue",
     "chunkName": "pages/illustrations",
-    "_name": "_2a9b514e"
+    "_name": "_0f53c2a8"
   },
   {
     "name": "motiongraphics___es",
     "path": "/motiongraphics",
-    "component": "/Users/Charis/Documents/charisbi/pages/motiongraphics.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/motiongraphics.vue",
     "chunkName": "pages/motiongraphics",
-    "_name": "_6880bda6"
+    "_name": "_521f9c08"
   },
   {
     "name": "photography___es",
     "path": "/photography",
-    "component": "/Users/Charis/Documents/charisbi/pages/photography.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/photography.vue",
     "chunkName": "pages/photography",
-    "_name": "_029da188"
+    "_name": "_9e6fa334"
   },
   {
     "name": "projects___es",
     "path": "/projects",
-    "component": "/Users/Charis/Documents/charisbi/pages/projects.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/projects.vue",
     "chunkName": "pages/projects",
-    "_name": "_fe1f09c2"
+    "_name": "_49264b01"
   },
   {
     "name": "webdesign___es",
     "path": "/webdesign",
-    "component": "/Users/Charis/Documents/charisbi/pages/webdesign.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/webdesign.vue",
     "chunkName": "pages/webdesign",
-    "_name": "_c71b8786"
+    "_name": "_4a132eca"
   },
   {
     "name": "curriculumvitae___en",
     "path": "/en/curriculumvitae",
-    "component": "/Users/Charis/Documents/charisbi/pages/curriculumvitae.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/curriculumvitae.vue",
     "chunkName": "pages/curriculumvitae",
-    "_name": "_4696ced6"
+    "_name": "_26f18673"
   },
   {
     "name": "illustrations___en",
     "path": "/en/illustrations",
-    "component": "/Users/Charis/Documents/charisbi/pages/illustrations.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/illustrations.vue",
     "chunkName": "pages/illustrations",
-    "_name": "_2a9b514e"
+    "_name": "_0f53c2a8"
   },
   {
     "name": "motiongraphics___en",
     "path": "/en/motiongraphics",
-    "component": "/Users/Charis/Documents/charisbi/pages/motiongraphics.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/motiongraphics.vue",
     "chunkName": "pages/motiongraphics",
-    "_name": "_6880bda6"
+    "_name": "_521f9c08"
   },
   {
     "name": "photography___en",
     "path": "/en/photography",
-    "component": "/Users/Charis/Documents/charisbi/pages/photography.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/photography.vue",
     "chunkName": "pages/photography",
-    "_name": "_029da188"
+    "_name": "_9e6fa334"
   },
   {
     "name": "projects___en",
     "path": "/en/projects",
-    "component": "/Users/Charis/Documents/charisbi/pages/projects.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/projects.vue",
     "chunkName": "pages/projects",
-    "_name": "_fe1f09c2"
+    "_name": "_49264b01"
   },
   {
     "name": "webdesign___en",
     "path": "/en/webdesign",
-    "component": "/Users/Charis/Documents/charisbi/pages/webdesign.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/webdesign.vue",
     "chunkName": "pages/webdesign",
-    "_name": "_c71b8786"
+    "_name": "_4a132eca"
   },
   {
     "name": "index___es",
     "path": "/",
-    "component": "/Users/Charis/Documents/charisbi/pages/index.vue",
+    "component": "/Users/mac/Documents/Charis/Mine/charisbi/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_8ec2ef06"
+    "_name": "_6d18d84a"
   }
 ]

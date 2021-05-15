@@ -204,7 +204,7 @@ export default {
           $('#menu_item, #menu_item2, #menu_item3, #menu_item4, #menu_item5').mousemove(function(e) {
           $('.menu_image, .menu_image2, .menu_image3, .menu_image4, .menu_image5').offset({
               left: e.pageX + 20 ,
-              top: e.pageY - 50 ,
+              top: e.pageY - 150 ,
           });
          });
         // Tengo multiples elementos (.menu_image, .menu_image2, .menu_image3) que ocupan diferentes y los mismos 
@@ -653,7 +653,7 @@ display: none;
           a:hover{
             font-weight: 800;
             text-decoration: none;
-            color: #000000;
+            color: var(--color-hover);
             z-index: 1;
           }
         }
@@ -833,14 +833,16 @@ display: none;
     height: 800px;
     .logo{
       .position-logo{
-        width: 42rem;
+        margin-top: 23rem;
+        width: 51rem;
+        height: auto;
       }
     }
     .words{
-      line-height: 14rem;
+      line-height: 17.3rem;
       .marquee{
         .word{
-          font-size: 13rem;
+          font-size: 18rem;
         }
       }
     }
@@ -851,7 +853,7 @@ display: none;
     }
   }
  .About{
-    margin-top: 120px;
+    margin-top: 250px;
     padding: 0px 20rem;
     .aboutWave{
       font-size: 26px;
@@ -881,6 +883,10 @@ display: none;
     padding: 100px 250px;
     h2{
       font-size: 10rem;
+    }
+    .menu_image, .menu_image2, .menu_image3, .menu_image4, .menu_image5{
+      width: 350px;
+      height: 500px;
     }
     .projectsOnly{
       ul{
@@ -924,6 +930,13 @@ display: none;
     }
     .lines{
       width: 1100px;
+    }
+    .socialmed1, .socialmed2, .socialmed3, .socialmed4{
+      width: 36rem;
+      height: 58rem;
+      left: 90rem;
+      position: absolute;
+      bottom: 0px;
     }
   }
 }

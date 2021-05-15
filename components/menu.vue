@@ -148,7 +148,7 @@ ul{
         height: 2px;
         left: 50%;
         position: absolute;
-        background: #000;
+        background: var(--color-hover);
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
       }
@@ -156,6 +156,22 @@ ul{
         width: 100%; 
         left: 0; 
       }
+    }
+  }
+  @media (min-width: 2100px) {
+    ul{
+      li{
+        a{
+          font-size: 1.5rem;
+          letter-spacing: 0.15rem;
+          padding: 12px 0px;
+          margin: 0 8px;
+        }
+      }
+    }
+    .Ch-logo{
+      width: 6.3rem;
+      margin-left: 2rem;
     }
   }
 }

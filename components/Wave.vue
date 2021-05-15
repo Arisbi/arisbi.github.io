@@ -2,7 +2,7 @@
     <svg id="wave" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 456.7 39.9" style="enable-background:new 0 0 456.7 39.9;" xml:space="preserve">
         <style type="text/css">
-            .st69{fill:none;stroke:#000000;stroke-width:12;stroke-miterlimit:10;}
+            .st69{fill:none;stroke:var(--color);stroke-width:12;stroke-miterlimit:10;}
         </style>
             <path class="st69" d="M4.2,33.2c0.1-0.1,7-6.9,15.9-13.8C27.7,13.7,38.7,6,47.5,6c7.5,0,14,6.6,20.3,12.9l0.4,0.4
             c6.8,6.9,14.6,14.6,24.6,14.6c9.9,0,17.7-7.8,24.5-14.6l0.5-0.5C124,12.5,130.5,6,137.9,6c7.5,0,13.9,6.5,20.2,12.9l0.4,0.4
