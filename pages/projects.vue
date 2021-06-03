@@ -5,7 +5,7 @@
       <h2>Lo más destacado</h2>
 
       <span class="leftSpan top-date">2021</span>
-      <a class="cardo cardo-left cardo-bottom" href="">
+      <a class="cardo cardo-left cardo-bottom" href="/project">
         <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
         <div class="info">
           <h3>Nombre projecto</h3>
@@ -15,7 +15,7 @@
         </div>
       </a>
       <span class="rightSpan bottom-date">2020</span>
-      <a class="cardo cardo-right cardo-top" href="">
+      <a class="cardo cardo-right cardo-top" href="/project">
         <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover; margin-left: -39rem;">
         <div class="info">
           <h3>Nombre projecto</h3>
@@ -25,7 +25,7 @@
         </div>
       </a>
       <span class="leftSpan top-date" style="top: 4rem;">2019</span>
-      <a class="cardo cardo-left cardo-bottom" href="">
+      <a class="cardo cardo-left cardo-bottom" href="/project">
         <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover; margin-left: -39rem;">
         <div class="info">
           <h3>Nombre projecto</h3>
@@ -35,7 +35,7 @@
         </div>
       </a>
       <span class="rightSpan bottom-date">2018</span>
-      <a class="cardo cardo-right cardo-top" href="">
+      <a class="cardo cardo-right cardo-top" href="/project">
         <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover; margin-left: -39rem;">
         <div class="info">
           <h3>Nombre projecto</h3>
@@ -45,8 +45,8 @@
         </div>
       </a>
 
-      <a class="cardo cardo-left cardo-bottom" href="">
-        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover; margin-right: 15rem; margin-left: 15rem;">
+      <a class="cardo cardo-left cardo-bottom" href="/project" style="margin-right: 8rem;">
+        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover; margin-left: 8rem;">
         <div class="info">
           <h3>Nombre projecto</h3>
           <p>08/2021</p>
@@ -55,7 +55,7 @@
         </div>
       </a>
 
-      <a class="cardo cardo-right cardo-top" href="">
+      <a class="cardo cardo-right cardo-top" href="/project">
         <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover">
         <div class="info">
           <h3>Nombre projecto</h3>
