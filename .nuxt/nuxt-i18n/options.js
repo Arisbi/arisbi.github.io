@@ -1,3 +1,5 @@
+import locale8db5ed1c from '../../locales/es.json'
+
 export const Constants = {
   COMPONENT_OPTIONS_KEY: "nuxtI18n",
   STRATEGIES: {"PREFIX":"prefix","PREFIX_EXCEPT_DEFAULT":"prefix_except_default","PREFIX_AND_DEFAULT":"prefix_and_default","NO_PREFIX":"no_prefix"},
@@ -16,7 +18,7 @@ export const options = {
   defaultLocaleRouteNameSuffix: "default",
   strategy: "prefix_except_default",
   lazy: true,
-  langDir: "/Users/Charis/Documents/charisbi/locales",
+  langDir: "/Users/mac/Documents/Charis/Mine/charisbi/locales",
   rootRedirect: null,
   detectBrowserLanguage: {"alwaysRedirect":false,"cookieCrossOrigin":false,"cookieDomain":null,"cookieKey":"i18n_redirected","cookieSecure":false,"fallbackLocale":"","onlyOnNoPrefix":false,"onlyOnRoot":false,"useCookie":true},
   differentDomains: false,
@@ -27,12 +29,13 @@ export const options = {
   pages: {},
   skipSettingLocaleOnNavigate: false,
   beforeLanguageSwitch: () => null,
+  onBeforeLanguageSwitch: () => {},
   onLanguageSwitched: () => null,
   normalizedLocales: [{"code":"en","file":"en.json"},{"code":"es","file":"es.json"}],
   localeCodes: ["en","es"],
 }
 
-export const asyncLocales = {
+export const localeMessages = {
+  'es.json': () => Promise.resolve(locale8db5ed1c),
   'en.json': () => import('../../locales/en.json' /* webpackChunkName: "lang-en.json" */),
-  'es.json': () => import('../../locales/es.json' /* webpackChunkName: "lang-es.json" */)
 }

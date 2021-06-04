@@ -3,7 +3,7 @@
     <b-container fluid style="overflow: hidden;">
 
       <svg class="lines" width="1440" height="170" viewBox="0 0 1440 170" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M-2 117.5C44 71.6667 159.492 1.50001 253.5 1.5C500 1.49999 584.334 157.5 753.5 157.5C924.5 157.5 1042 97 1155 100.5C1245.4 103.3 1359 131 1439 169" stroke="#EBECEE" stroke-width="3"/>
+        <path d="M-2 117.5C44 71.6667 159.492 1.50001 253.5 1.5C500 1.49999 584.334 157.5 753.5 157.5C924.5 157.5 1042 97 1155 100.5C1245.4 103.3 1359 131 1439 169" stroke="var(--color-primary)" stroke-width="3"/>
       </svg>
 
       <h2 class="text-center"> Motion Graphics </h2>
@@ -211,7 +211,7 @@ h2{
 }
 a{
     text-decoration: none;
-    color: black;
+    color: var(--color-primary);
     font-weight: 200;
     padding: 10px;
 }
@@ -243,7 +243,7 @@ a{
     grid-gap: 16px;
     margin-bottom: 4rem;
     .griditem{
-      background-color: gray;
+      background-color: var(--color-primary);
       min-height: 100px;
       width: 100%;
       border-radius: 8px;
@@ -313,6 +313,7 @@ a{
   .lines{
     position: relative;
     width: 100vw;
+    height: 100%;
     z-index: -1;
     left: -15px;
   }
@@ -338,7 +339,7 @@ a{
     grid-gap: 24px;
     margin-bottom: 4rem;
     .griditem{
-      background-color: gray;
+      background-color: var(--color-primary);
       min-height: 100px;
       width: 100%;
       border-radius: 8px;

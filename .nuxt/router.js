@@ -4,14 +4,14 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _4696ced6 = () => interopDefault(import('../pages/curriculumvitae.vue' /* webpackChunkName: "pages/curriculumvitae" */))
-const _8ec2ef06 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
-const _2a9b514e = () => interopDefault(import('../pages/illustrations.vue' /* webpackChunkName: "pages/illustrations" */))
-const _6880bda6 = () => interopDefault(import('../pages/motiongraphics.vue' /* webpackChunkName: "pages/motiongraphics" */))
-const _029da188 = () => interopDefault(import('../pages/photography.vue' /* webpackChunkName: "pages/photography" */))
-const _7c0c12f8 = () => interopDefault(import('../pages/project.vue' /* webpackChunkName: "pages/project" */))
-const _fe1f09c2 = () => interopDefault(import('../pages/projects.vue' /* webpackChunkName: "pages/projects" */))
-const _c71b8786 = () => interopDefault(import('../pages/webdesign.vue' /* webpackChunkName: "pages/webdesign" */))
+const _26f18673 = () => interopDefault(import('../pages/curriculumvitae.vue' /* webpackChunkName: "pages/curriculumvitae" */))
+const _6d18d84a = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _0f53c2a8 = () => interopDefault(import('../pages/illustrations.vue' /* webpackChunkName: "pages/illustrations" */))
+const _521f9c08 = () => interopDefault(import('../pages/motiongraphics.vue' /* webpackChunkName: "pages/motiongraphics" */))
+const _9e6fa334 = () => interopDefault(import('../pages/photography.vue' /* webpackChunkName: "pages/photography" */))
+const _1c8cbb3c = () => interopDefault(import('../pages/project.vue' /* webpackChunkName: "pages/project" */))
+const _49264b01 = () => interopDefault(import('../pages/projects.vue' /* webpackChunkName: "pages/projects" */))
+const _4a132eca = () => interopDefault(import('../pages/webdesign.vue' /* webpackChunkName: "pages/webdesign" */))
 
 const emptyFn = () => {}
 
@@ -26,67 +26,67 @@ export const routerOptions = {
 
   routes: [{
     path: "/curriculumvitae",
-    component: _4696ced6,
+    component: _26f18673,
     name: "curriculumvitae___es"
   }, {
     path: "/en",
-    component: _8ec2ef06,
+    component: _6d18d84a,
     name: "index___en"
   }, {
     path: "/illustrations",
-    component: _2a9b514e,
+    component: _0f53c2a8,
     name: "illustrations___es"
   }, {
     path: "/motiongraphics",
-    component: _6880bda6,
+    component: _521f9c08,
     name: "motiongraphics___es"
   }, {
     path: "/photography",
-    component: _029da188,
+    component: _9e6fa334,
     name: "photography___es"
   }, {
     path: "/project",
-    component: _7c0c12f8,
+    component: _1c8cbb3c,
     name: "project___es"
   }, {
     path: "/projects",
-    component: _fe1f09c2,
+    component: _49264b01,
     name: "projects___es"
   }, {
     path: "/webdesign",
-    component: _c71b8786,
+    component: _4a132eca,
     name: "webdesign___es"
   }, {
     path: "/en/curriculumvitae",
-    component: _4696ced6,
+    component: _26f18673,
     name: "curriculumvitae___en"
   }, {
     path: "/en/illustrations",
-    component: _2a9b514e,
+    component: _0f53c2a8,
     name: "illustrations___en"
   }, {
     path: "/en/motiongraphics",
-    component: _6880bda6,
+    component: _521f9c08,
     name: "motiongraphics___en"
   }, {
     path: "/en/photography",
-    component: _029da188,
+    component: _9e6fa334,
     name: "photography___en"
   }, {
     path: "/en/project",
-    component: _7c0c12f8,
+    component: _1c8cbb3c,
     name: "project___en"
   }, {
     path: "/en/projects",
-    component: _fe1f09c2,
+    component: _49264b01,
     name: "projects___en"
   }, {
     path: "/en/webdesign",
-    component: _c71b8786,
+    component: _4a132eca,
     name: "webdesign___en"
   }, {
     path: "/",
-    component: _8ec2ef06,
+    component: _6d18d84a,
     name: "index___es"
   }],
 
@@ -94,7 +94,7 @@ export const routerOptions = {
 }
 
 export function createRouter (ssrContext, config) {
-  const base = (config.app && config.app.basePath) || routerOptions.base
+  const base = (config._app && config._app.basePath) || routerOptions.base
   const router = new Router({ ...routerOptions, base  })
 
   // TODO: remove in Nuxt 3

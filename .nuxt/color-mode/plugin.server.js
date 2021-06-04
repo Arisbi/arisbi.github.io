@@ -3,7 +3,20 @@ import colorSchemeComponent from './color-scheme'
 
 Vue.component('ColorScheme', colorSchemeComponent)
 
+const script = {
+  hid: 'nuxt-color-mode-script',
+  innerHTML: `!function(){"use strict";var e=window,s=document,o=s.documentElement,a=["dark","light"],t=window.localStorage.getItem("nuxt-color-mode")||"system",c="system"===t?l():t,i=s.body.getAttribute("data-color-mode-forced");function r(e){var s=""+e+"-mode";o.classList?o.classList.add(s):o.className+=" "+s}function n(s){return e.matchMedia("(prefers-color-scheme"+s+")")}function l(){if(e.matchMedia&&"not all"!==n("").media)for(var s of a)if(n(":"+s).matches)return s;return"light"}i&&(c=i),r(c),e["__NUXT_COLOR_MODE__"]={preference:t,value:c,getColorScheme:l,addClass:r,removeClass:function(e){var s=""+e+"-mode";o.classList?o.classList.remove(s):o.className=o.className.replace(new RegExp(s,"g"),"")}}}();
+`,
+  pbody: true
+}
+
 export default function (ctx, inject) {
+  ctx.app.head.script.push(script)
+
+  const serializeProp = '__dangerouslyDisableSanitizersByTagID'
+  ctx.app.head[serializeProp] = ctx.app.head[serializeProp] || {}
+  ctx.app.head[serializeProp]['nuxt-color-mode-script'] = ['innerHTML']
+
   const preference = 'system'
 
   const colorMode = {

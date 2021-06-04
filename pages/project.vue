@@ -2,7 +2,7 @@
  <b-container fluid class="proyect-details">
      <b-row class="main-name">
          <svg class="line-project" width="1440" height="389" viewBox="0 0 1440 389" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 126.492C36.7164 63.683 416.59 -56.2269 491.435 35.1324C566.28 126.492 309.815 187.589 378.5 282C441.5 368.596 845.889 157.326 1023.82 222.42C1115.61 256.001 1043.59 334.336 1101.49 368.596C1174.44 411.761 1410.76 375.448 1439 296.65" stroke="#EBECEE" stroke-width="4"/>
+            <path d="M0 126.492C36.7164 63.683 416.59 -56.2269 491.435 35.1324C566.28 126.492 309.815 187.589 378.5 282C441.5 368.596 845.889 157.326 1023.82 222.42C1115.61 256.001 1043.59 334.336 1101.49 368.596C1174.44 411.761 1410.76 375.448 1439 296.65" stroke="var(--color-primary)" stroke-width="4"/>
         </svg>
          <b-col cols="10">
             <h6>08/08/2021</h6>
@@ -180,10 +180,10 @@
      </b-row>
      <b-row class="mt-5">
         <b-col cols="6">
-            <img src="@/static/astronaut12.png" style="object-fit: cover; width: 100%;" alt=""> 
+            <img src="@/assets/Autolingua-envelope.png" style="object-fit: cover; width: 100%; height: 100%;" alt=""> 
         </b-col>
         <b-col cols="6">
-            <img src="@/static/astronaut12.png" style="object-fit: cover; width: 100%;" alt=""> 
+            <img src="@/assets/Cup3.png" style="object-fit: cover; width: 100%; height: 100%;" alt=""> 
         </b-col>
      </b-row>
 
@@ -238,7 +238,7 @@
         <span>Siguiente</span>
         <nuxt-link :to="{path: '/'}" class="next">Projecto 1</nuxt-link>
         <svg class="gray-rectangle" width="938" height="509" viewBox="0 0 938 509" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect y="183.11" width="814" height="642" rx="8" transform="rotate(-13 0 183.11)" fill="#EBECEE"/>
+            <rect y="183.11" width="814" height="642" rx="8" transform="rotate(-13 0 183.11)" fill="var(--color-primary)"/>
         </svg>
      </div>
  </b-container>
@@ -255,8 +255,11 @@ export default {
     padding: 100px 40px 0px 40px;
     .line-project{
         position: absolute;
-        top: 9rem;
+        top: -12rem;
         right: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
     }
     .main-name{
         margin-top: 150px;
@@ -278,7 +281,7 @@ export default {
         a{
             font-weight: 500;
             font-size: 18px;
-            color: black;
+            color: var(--color);
             margin-left: 6rem;
         }
     }
@@ -375,6 +378,9 @@ export default {
         }
     }
     .next-projects{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
         span{
             font-weight: 500;
             font-size: 40px;
@@ -382,13 +388,14 @@ export default {
             display: block;
             margin-top: 14rem;
             margin-bottom: 3rem;
+            color: var(--color);
         }
         .next{
             font-weight: 500;
             font-size: 70px;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            color: black;
+            color: var(--color);
         }
         .next:hover{
             text-decoration-line: underline;
@@ -397,6 +404,7 @@ export default {
             position: relative;
             margin-top: -24rem;
             z-index: -1;
+            width: 100%;
         }
     }
 }

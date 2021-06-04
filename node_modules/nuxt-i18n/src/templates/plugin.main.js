@@ -21,13 +21,6 @@ import { klona } from '~i18n-klona'
 
 Vue.use(VueI18n)
 
-const detectBrowserLanguage = /** @type {Required<import('../../types').DetectBrowserLanguageOptions>} */(options.detectBrowserLanguage)
-const { alwaysRedirect, onlyOnNoPrefix, onlyOnRoot, fallbackLocale } = detectBrowserLanguage
-const getLocaleFromRoute = createLocaleFromRouteGetter(options.localeCodes, {
-  routesNameSeparator: options.routesNameSeparator,
-  defaultLocaleRouteNameSuffix: options.defaultLocaleRouteNameSuffix
-})
-
 /** @type {import('@nuxt/types').Plugin} */
 export default async (context) => {
   const { app, route, store, req, res, redirect } = context
@@ -36,22 +29,42 @@ export default async (context) => {
     registerStore(store, options.vuex, options.localeCodes)
   }
 
-  if (process.server && options.lazy) {
+  const { lazy } = options
+  const injectInNuxtState = lazy && (lazy === true || lazy.skipNuxtState !== true)
+
+  if (process.server && injectInNuxtState) {
+    const devalue = (await import('devalue')).default
     context.beforeNuxtRender(({ nuxtState }) => {
       /** @type {Record<string, import('vue-i18n').LocaleMessageObject>} */
       const langs = {}
       const { fallbackLocale, locale } = app.i18n
-      if (locale) {
-        langs[locale] = app.i18n.getLocaleMessage(locale)
-      }
-      if (typeof (fallbackLocale) === 'string' && locale !== fallbackLocale) {
-        langs[fallbackLocale] = app.i18n.getLocaleMessage(fallbackLocale)
+      if (locale && locale !== fallbackLocale) {
+        // @ts-ignore Using internal API to avoid unnecessary cloning.
+        const messages = app.i18n._getMessages()[locale]
+        if (messages) {
+          try {
+            devalue(messages)
+            langs[locale] = messages
+          } catch {
+            // Ignore - client-side will load the chunk asynchronously.
+          }
+        }
       }
       nuxtState.__i18n = { langs }
     })
   }
 
-  const { useCookie, cookieKey, cookieDomain, cookieSecure, cookieCrossOrigin } = detectBrowserLanguage
+  const {
+    alwaysRedirect,
+    fallbackLocale,
+    onlyOnNoPrefix,
+    onlyOnRoot,
+    useCookie,
+    cookieKey,
+    cookieDomain,
+    cookieSecure,
+    cookieCrossOrigin
+  } = /** @type {Required<import('../../types').DetectBrowserLanguageOptions>} */(options.detectBrowserLanguage)
 
   /**
    * @param {string | undefined} newLocale
@@ -67,12 +80,19 @@ export default async (context) => {
       return
     }
 
-    // Abort if newLocale did not change
-    if (newLocale === app.i18n.locale) {
+    const oldLocale = app.i18n.locale
+
+    if (newLocale === oldLocale) {
       return
     }
 
-    const oldLocale = app.i18n.locale
+    const localeOverride = app.i18n.onBeforeLanguageSwitch(oldLocale, newLocale, initialSetup, context)
+    if (localeOverride && app.i18n.localeCodes.includes(localeOverride)) {
+      if (localeOverride === oldLocale) {
+        return
+      }
+      newLocale = localeOverride
+    }
 
     if (!initialSetup) {
       app.i18n.beforeLanguageSwitch(oldLocale, newLocale)
@@ -82,30 +102,33 @@ export default async (context) => {
       app.i18n.setLocaleCookie(newLocale)
     }
 
-    // Lazy-loading enabled
-    if (options.lazy) {
+    if (options.langDir) {
       const i18nFallbackLocale = app.i18n.fallbackLocale
 
-      // Load fallback locale(s).
-      if (i18nFallbackLocale) {
+      if (options.lazy) {
+        // Load fallback locale(s).
+        if (i18nFallbackLocale) {
         /** @type {Promise<void>[]} */
-        let localesToLoadPromises = []
-        if (Array.isArray(i18nFallbackLocale)) {
-          localesToLoadPromises = i18nFallbackLocale.map(fbLocale => loadLanguageAsync(context, fbLocale))
-        } else if (typeof i18nFallbackLocale === 'object') {
-          if (i18nFallbackLocale[newLocale]) {
-            localesToLoadPromises = localesToLoadPromises.concat(i18nFallbackLocale[newLocale].map(fbLocale => loadLanguageAsync(context, fbLocale)))
+          let localesToLoadPromises = []
+          if (Array.isArray(i18nFallbackLocale)) {
+            localesToLoadPromises = i18nFallbackLocale.map(fbLocale => loadLanguageAsync(context, fbLocale))
+          } else if (typeof i18nFallbackLocale === 'object') {
+            if (i18nFallbackLocale[newLocale]) {
+              localesToLoadPromises = localesToLoadPromises.concat(i18nFallbackLocale[newLocale].map(fbLocale => loadLanguageAsync(context, fbLocale)))
+            }
+            if (i18nFallbackLocale.default) {
+              localesToLoadPromises = localesToLoadPromises.concat(i18nFallbackLocale.default.map(fbLocale => loadLanguageAsync(context, fbLocale)))
+            }
+          } else if (newLocale !== i18nFallbackLocale) {
+            localesToLoadPromises.push(loadLanguageAsync(context, i18nFallbackLocale))
           }
-          if (i18nFallbackLocale.default) {
-            localesToLoadPromises = localesToLoadPromises.concat(i18nFallbackLocale.default.map(fbLocale => loadLanguageAsync(context, fbLocale)))
-          }
-        } else if (newLocale !== i18nFallbackLocale) {
-          localesToLoadPromises.push(loadLanguageAsync(context, i18nFallbackLocale))
+          await Promise.all(localesToLoadPromises)
         }
-        await Promise.all(localesToLoadPromises)
+        await loadLanguageAsync(context, newLocale)
+      } else {
+        // Load all locales.
+        await Promise.all(options.localeCodes.map(locale => loadLanguageAsync(context, locale)))
       }
-
-      await loadLanguageAsync(context, newLocale)
     }
 
     app.i18n.locale = newLocale
@@ -132,6 +155,11 @@ export default async (context) => {
       }
     }
   }
+
+  const getLocaleFromRoute = createLocaleFromRouteGetter(options.localeCodes, {
+    routesNameSeparator: options.routesNameSeparator,
+    defaultLocaleRouteNameSuffix: options.defaultLocaleRouteNameSuffix
+  })
 
   /**
    * Gets the redirect path for locale.
@@ -248,7 +276,7 @@ export default async (context) => {
 
   /**
    * @param {import('vue-router').Route} route
-   * @return {string} Returns true if the browser language was detected.
+   * @return {string} Returns the browser locale that was detected or an empty string otherwise.
    */
   const doDetectBrowserLanguage = route => {
     // Browser detection is ignored if it is a nuxt generate.
@@ -301,6 +329,7 @@ export default async (context) => {
     i18n.defaultLocale = options.defaultLocale
     i18n.differentDomains = options.differentDomains
     i18n.beforeLanguageSwitch = options.beforeLanguageSwitch
+    i18n.onBeforeLanguageSwitch = options.onBeforeLanguageSwitch
     i18n.onLanguageSwitched = options.onLanguageSwitched
     i18n.setLocaleCookie = locale => setLocaleCookie(locale, res, { useCookie, cookieDomain, cookieKey, cookieSecure, cookieCrossOrigin })
     i18n.getLocaleCookie = () => getLocaleCookie(req, { useCookie, cookieKey, localeCodes: options.localeCodes })
