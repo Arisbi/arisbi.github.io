@@ -168,16 +168,17 @@
              <p>Autolingua</p>
          </b-col>
      </b-row>
-     <img src="@/static/astronaut12.png" style="object-fit: cover; width: 100%;" alt="">
-     <b-row>
+     <img src="@/assets/autolingua-brand.png" style="object-fit: cover; width: 100%;" alt="">
+
+     <b-row class="mt-5 text-center" align-v="center">
         <b-col cols="6">
-            <img src="@/static/astronaut12.png" style="object-fit: cover; width: 100%;" alt=""> 
+            <img src="@/assets/mobile.png" style="object-fit: cover; width: 40%;" alt=""> 
         </b-col>
         <b-col cols="6">
-            <img src="@/static/astronaut12.png" style="object-fit: cover; width: 100%;" alt=""> 
+            <img src="@/assets/tablet.png" style="object-fit: cover; width: 70%;" alt=""> 
         </b-col>
      </b-row>
-     <b-row>
+     <b-row class="mt-5">
         <b-col cols="6">
             <img src="@/static/astronaut12.png" style="object-fit: cover; width: 100%;" alt=""> 
         </b-col>
@@ -186,7 +187,7 @@
         </b-col>
      </b-row>
 
-     <b-row>
+     <b-row class="mt-5">
          <div>
             <b-carousel
                 id="carousel-fade"
@@ -211,21 +212,21 @@
         </div>
      </b-row>
 
-     <b-row>
-         <b-col cols="6">
+     <b-row class="mt-5" align-v="center" align-h="center">
+         <b-col cols="5" align-self="center">
             <h6>Solución</h6>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing maecenas consequat 
              aliquam quis id adipiscing integer etiam. Morbi dignissim id porttitor tellus aliquam 
              mi diam. Massa sed consectetur enim dictumst. Egestas massa, facilisis venenatis sed 
              hac fermentum bibendum interdum turpis.</p>
          </b-col>
-         <b-col cols="6">
-            <img src="@/static/astronaut12.png" style="object-fit: cover; width: 100%;" alt="">
+         <b-col cols="4" class="text-center">
+            <img src="@/assets/autolingua-old.png" style="object-fit: cover; width: 70%;" alt="">
          </b-col>
      </b-row>
 
-     <img src="@/static/astronaut12.png" style="object-fit: cover; width: 100%;" alt="">
-     <b-row>
+     <img class="mt-5" src="@/assets/autolingua-brand.png" style="object-fit: cover; width: 100%;" alt="">
+     <b-row class="mt-5">
         <b-col cols="6">
             <img src="@/static/astronaut12.png" style="object-fit: cover; width: 100%;" alt=""> 
         </b-col>
@@ -233,12 +234,13 @@
             <img src="@/static/astronaut12.png" style="object-fit: cover; width: 100%;" alt=""> 
         </b-col>
      </b-row>
-     <b-row>
-         <b-cols>
-             <span>Siguiente</span>
-             <nuxt-link :to="{path: '/'}">Projecto 1</nuxt-link>
-         </b-cols>
-     </b-row>
+     <div class="next-projects text-center">
+        <span>Siguiente</span>
+        <nuxt-link :to="{path: '/'}" class="next">Projecto 1</nuxt-link>
+        <svg class="gray-rectangle" width="938" height="509" viewBox="0 0 938 509" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="183.11" width="814" height="642" rx="8" transform="rotate(-13 0 183.11)" fill="#EBECEE"/>
+        </svg>
+     </div>
  </b-container>
 </template>
 
@@ -250,7 +252,7 @@ export default {
 
 <style lang="scss" scoped>
 .proyect-details{
-    padding: 100px 40px;
+    padding: 100px 40px 0px 40px;
     .line-project{
         position: absolute;
         top: 9rem;
@@ -372,11 +374,37 @@ export default {
             margin-top: 1rem;
         }
     }
+    .next-projects{
+        span{
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 49px;
+            display: block;
+            margin-top: 14rem;
+            margin-bottom: 3rem;
+        }
+        .next{
+            font-weight: 500;
+            font-size: 70px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: black;
+        }
+        .next:hover{
+            text-decoration-line: underline;
+        }
+        .gray-rectangle{
+            position: relative;
+            margin-top: -24rem;
+            z-index: -1;
+        }
+    }
 }
 
 img{
     -webkit-user-drag: none;
     pointer-events: none;
+    border-radius: 2rem;
 }
 
 </style>
