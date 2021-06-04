@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a,b,c,d){return {staticAssetsBase:"\u002Fassets\u002Fstatic\u002F1622849813",layout:"default",error:a,serverRendered:b,routePath:c,config:{_app:{basePath:c,assetsPath:"\u002Fassets\u002F",cdnURL:a}},__i18n:{langs:{}},colorMode:{preference:d,value:d,unknown:b,forced:false}}}(null,true,"\u002F","system"));
