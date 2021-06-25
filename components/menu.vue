@@ -1,18 +1,18 @@
 <template>
   <b-navbar toggleable="lg" class="navbackground fixed-top">
-        <b-navbar-brand href="/">
+        <b-navbar-brand to="/">
         <LogoCh/>
         </b-navbar-brand>
 
         <b-navbar-nav>
             <b-nav-item>
-              <nuxt-link :to="{path: '/',hash:'#about'}" class="desktop" exact>Acerca de</nuxt-link>
+              <NuxtLink to="/#about" class="desktop">Acerca de</NuxtLink>
             </b-nav-item>
             <b-nav-item>
-              <nuxt-link :to="{path: '/',hash:'#work'}" class="desktop">Trabajos</nuxt-link>
+              <NuxtLink to="/#work" class="desktop">Trabajos</NuxtLink>
             </b-nav-item>
             <b-nav-item>
-              <nuxt-link :to="{path: '/',hash:'#contact'}" class="desktop">Contacto</nuxt-link>
+              <NuxtLink to="/#contact" class="desktop">Contacto</NuxtLink>
             </b-nav-item>
         </b-navbar-nav>
 
@@ -20,24 +20,26 @@
 
         <b-sidebar class="sidebarMobile mobile" id="nav-collapseMobile" title="Menu" is-nav>
             <b-navbar-nav>
-              <b-nav-item href="/">Home</b-nav-item>
-              <b-nav-item :to="{path: '/',hash:'#about'}">Acerca de</b-nav-item>
-              <b-nav-item :to="{path: '/',hash:'#work'}">Trabajos</b-nav-item>
-              <b-nav-item href="/projects">Proyectos</b-nav-item>
-              <b-nav-item href="/illustrations">Ilustraciones</b-nav-item>
-              <b-nav-item href="/photography">Fotografia</b-nav-item>
-              <b-nav-item href="/motiongraphics">Motion Graphics</b-nav-item>
-              <b-nav-item href="/webdesign">Ui Web</b-nav-item>
-              <b-nav-item :to="{path: '/',hash:'#contact'}">Contacto</b-nav-item>
-              <b-nav-item href="/curriculumvitae">Curriculum Vitae</b-nav-item>
+              <b-nav-item to="/">Home</b-nav-item>
+              <b-nav-item to="/#about">Acerca de</b-nav-item>
+              <b-nav-item to="/#work">Trabajos</b-nav-item>
+              <b-nav-item to="/projects">Proyectos</b-nav-item>
+              <b-nav-item to="/illustrations">Ilustraciones</b-nav-item>
+              <b-nav-item to="/photography">Fotografia</b-nav-item>
+              <b-nav-item to="/motiongraphics">Motion Graphics</b-nav-item>
+              <b-nav-item to="/webdesign">Ui Web</b-nav-item>
+              <b-nav-item to="/#contact">Contacto</b-nav-item>
+              <b-nav-item to="/curriculumvitae">Curriculum Vitae</b-nav-item>
             </b-navbar-nav>
         </b-sidebar>
             
           <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto desktop">
+          <b-navbar-nav class="ml-auto desktop" style="display: inherit">
             <b-nav-item>
-              <a href="/curriculumvitae" class="desktop">Curriculum Vitae</a>
+              <NuxtLink to="/curriculumvitae" class="desktop">Curriculum Vitae</NuxtLink>
             </b-nav-item>
+            <b-nav-item @click="$colorMode.preference = color" class="desktop">Light</b-nav-item>
+            <b-nav-item @click="$colorMode.preference = color2" class="desktop">Dark</b-nav-item>
           </b-navbar-nav>
         
       </b-navbar>
@@ -47,6 +49,12 @@
 import LogoCh from '~/components/LogoCh.vue'
 
 export default {
+  data() {
+      return {
+        color: ['light'],
+        color2: ['dark'],
+      }
+    },
     components:{
         LogoCh
     },
@@ -90,6 +98,8 @@ display: none;
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
+
+
 
 ul{
   padding: 0 17px!important;

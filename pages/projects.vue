@@ -16,7 +16,7 @@
       </a>
       <span class="rightSpan bottom-date">2020</span>
       <a class="cardo cardo-right cardo-top" href="/project">
-        <img src="@/assets/astronaut12.png" alt="" style="object-fit: cover; margin-left: -39rem;">
+        <img src="@/assets/autolingua-brand.png" alt="" style="object-fit: cover; margin-left: -39rem;">
         <div class="info">
           <h3>Nombre projecto</h3>
           <p>08/2021</p>
@@ -116,6 +116,7 @@ export default {
     color: var(--color);
     img{
       width: 22rem;
+      border-radius: 1rem;
     }
     .info{
       float: right;
@@ -126,6 +127,7 @@ export default {
     img{
       float: right;
       width: 22rem;
+      border-radius: 1rem;
     }
     .info{
       float: left;
