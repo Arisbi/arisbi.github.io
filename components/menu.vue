@@ -38,8 +38,8 @@
             <b-nav-item>
               <NuxtLink to="/curriculumvitae" class="desktop">Curriculum Vitae</NuxtLink>
             </b-nav-item>
-            <b-nav-item @click="$colorMode.preference = color" class="desktop">Light</b-nav-item>
-            <b-nav-item @click="$colorMode.preference = color2" class="desktop">Dark</b-nav-item>
+            <b-nav-item @click="$colorMode.preference = color" class="desktop switch-mode">Light</b-nav-item>
+            <b-nav-item @click="$colorMode.preference = color2" class="desktop switch-mode">Dark</b-nav-item>
           </b-navbar-nav>
         
       </b-navbar>
@@ -102,7 +102,6 @@ display: none;
 
 
 ul{
-  padding: 0 17px!important;
   li{
       a{
         font-weight: 600;
@@ -116,7 +115,12 @@ ul{
 .nav-item{
   color: var(--color);
 }
-
+.switch-mode{
+  line-height: 2;
+  .nav-link{
+    color: var(--color)!important;
+  }
+}
 .navbackground{
   background:transparent;
 }

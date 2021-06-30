@@ -1,7 +1,7 @@
 <template>
   <b-container fluid class="cv">
     <b-row>
-      <b-col cols="4" class="profile">
+      <b-col cols="12" lg="4" class="profile">
         <img class="img-profile" src="@/assets/astronaut12.png" alt="" style="object-fit: cover;">
       </b-col>
       <b-col class="work">
@@ -52,7 +52,7 @@
     </b-row>
     <hr>
     <b-row class="specialties">
-      <b-col class="skills">
+      <b-col cols="12" md="6" lg="4" class="skills">
         <h5>Skills en diseño</h5>
         <b-row>
           <b-col>
@@ -75,7 +75,7 @@
         </b-col>
         </b-row>
       </b-col>
-       <b-col class="software">
+       <b-col cols="12" md="6" lg="4" class="software">
          <h5>Software</h5>
          <b-row>
           <b-col>
@@ -104,7 +104,7 @@
         </b-col>
         </b-row>
       </b-col>
-       <b-col class="tools">
+       <b-col cols="12" md="6" lg="4" class="tools">
          <h5>Front End / Tools</h5>
          <b-row>
           <b-col>
@@ -144,12 +144,12 @@ export default {
 
 <style lang="scss" scoped>
 .cv{
-  padding: 250px 25px 100px 25px;
+  padding:100px 25px 50px 25px;
+  }
   .img-profile{
-    width: 25rem;
+    width: 100%;
     height: 33rem;
-    position: sticky;
-    top: 5rem;
+    margin-bottom: 3rem;
   }
   .work{
     padding: 0 50px;
@@ -167,6 +167,35 @@ export default {
   }
   .sub-list{
     padding-left: 16px;
+  }
+
+
+@media (min-width: 992px) { 
+  .cv{
+    padding: 250px 25px 100px 25px;
+    .img-profile{
+      width: 25rem;
+      height: 33rem;
+      position: sticky;
+      top: 5rem;
+    }
+    .work{
+      padding: 0 50px;
+    }
+    hr{
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      border-top: 1px solid var(--color);
+    }
+    ul{
+      padding: 0;
+      li{
+        list-style: none;
+      }
+    }
+    .sub-list{
+      padding-left: 16px;
+    }
   }
 }
 </style>

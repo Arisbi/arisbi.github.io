@@ -31,7 +31,7 @@
 
       <b-container fluid id="about" class="About">
         <b-row>
-          <b-col cols="12" md="7">
+          <b-col cols="12" md="6" lg="7">
             <b-row class="aboutWave">
               <div class="wave">
                 <Wave/>
@@ -51,11 +51,6 @@
               <p>Mi github</p>
               <a href="https://github.com/Arisbi" target="_blank">ARISBI.</a>
             </div>
-              <b-row class="services">
-                <img src="~/assets/UxUi.svg" alt="" class="">
-                <img src="~/assets/Front.svg" alt="" class="">
-                <img src="~/assets/Graphic.svg" alt="" class="">
-              </b-row>
           </b-col>
           <BigCircle class="bigCircle"/>
           <SmallCircle class="smallCircle"/>
@@ -404,12 +399,6 @@ display: none;
     font-weight: 500;
     }
   }
-  .services{
-    img{
-      width: 5.5rem;
-      margin: 20px 22px;
-    }
-  }
   .bigCircle{
     position: absolute;
     left: -110px;
@@ -550,7 +539,7 @@ display: none;
     }
   }
   .About{
-    margin-top: 150px;
+    margin-top: 0px;
     padding: 0px 50px;
     .aboutWave{
       margin-left: -30px;
@@ -567,9 +556,9 @@ display: none;
     }
     .profile-img{
       width: 18rem;
-      position: absolute;
+      position: relative;
       z-index: -1;
-      top: 150px;
+      top: -100px;
       left: 120px;
     }
     .description{
@@ -591,12 +580,6 @@ display: none;
       font-weight: 500;
       }
     }
-    .services{
-      img{
-        width: 5.5rem;
-        margin: 20px 22px;
-      }
-    }
     .bigCircle{
       position: absolute;
       z-index: -2;
@@ -609,7 +592,7 @@ display: none;
     }
   }
   .Projects{
-    margin-top: 0px;
+    margin-top: -100px;
     h2{
       font-size: 5rem;
       text-align: left;
@@ -760,17 +743,11 @@ display: none;
     }
     .profile-img{
       width: 25rem;
-      top: 240px;
+      top: -100px;
       left: 150px;
     }
     .description, .git{
       font-size: 1.3rem;
-    }
-    .services{
-      img{
-        width: 7.3rem;
-        margin: 60px 20px;
-      }
     }
   }
   .Projects{
@@ -863,7 +840,7 @@ display: none;
     }
     .profile-img{
       width: 33rem;
-      top: 250px;
+      top: 0px;
       left: 220px;
     }
     .description{
@@ -871,12 +848,6 @@ display: none;
     }
     .git{
       font-size: 2rem;
-    }
-    .services{
-      img{
-        width: 9rem;
-        margin: 60px 50px;
-      }
     }
   }
   .Projects{
